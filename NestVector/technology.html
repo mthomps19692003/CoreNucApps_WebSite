@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technology - NestVector by CoreNucApps</title>
+  <meta name="description" content="Technology used to develop NestVector by CoreNucApps, including .NET MAUI, C#, XAML, SQLite, MAUI Graphics, local preferences, and market data services." />
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+  <div class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">
+        <img src="corenucapps_logo_small.png" alt="CoreNucApps logo" />
+        <span>CoreNucApps</span>
+      </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="release.html">Release</a>
+        <a href="technology.html">Technology</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="helppage.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <header class="page-hero">
+    <h1>Technology</h1>
+    <p>
+      NestVector is built with a modern .NET application stack for cross-platform user interfaces, market data requests, custom charts, local preferences, and local SQLite records.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Core Application Stack</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>.NET 10</h3>
+          <p>The application targets .NET 10 and uses modern C# with nullable reference types and implicit using directives enabled.</p>
+        </div>
+        <div class="card">
+          <h3>.NET MAUI</h3>
+          <p>The shared application is built with .NET MAUI so market, retirement, TSP, and investment workflows can be delivered across supported platforms.</p>
+        </div>
+        <div class="card">
+          <h3>C#</h3>
+          <p>C# powers page logic, data services, preferences, retirement calculations, investment storage, and chart preparation.</p>
+        </div>
+        <div class="card">
+          <h3>XAML</h3>
+          <p>XAML defines Shell navigation, app pages, themed resources, layouts, controls, and reusable UI structure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Platforms</h2>
+      <ul class="tag-list">
+        <li>Windows WinUI</li>
+        <li>Windows 10 version 1809 or newer</li>
+        <li>Windows 11</li>
+        <li>Android 5.0 or newer</li>
+        <li>iOS 15.0 or newer</li>
+        <li>Mac Catalyst 15.0 or newer</li>
+        <li>x64</li>
+        <li>ARM64</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data And State</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>SQLite</h3>
+          <p>Saved retirement scenarios and investment account records are stored locally with SQLite using sqlite-net-pcl.</p>
+        </div>
+        <div class="card">
+          <h3>MAUI Preferences</h3>
+          <p>Watchlists, selected trend symbols, theme, currency, button display mode, and chart ranges are persisted locally on the device.</p>
+        </div>
+        <div class="card">
+          <h3>Local First Records</h3>
+          <p>Retirement and investment planning records remain on the user's device unless the user chooses to copy, back up, or share device data separately.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Market Data And Charts</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>HttpClient</h3>
+          <p>Market, quote, trend, index, mover, gold, silver, and TSP data are retrieved over HTTP from external data sources.</p>
+        </div>
+        <div class="card">
+          <h3>System.Text.Json</h3>
+          <p>Yahoo Finance responses are parsed from JSON for quotes, search suggestions, historical series, index data, and movers.</p>
+        </div>
+        <div class="card">
+          <h3>Microsoft.Maui.Graphics</h3>
+          <p>Line charts and compact sparklines are drawn with MAUI Graphics for normalized trends and TSP fund history.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data Sources</h2>
+      <ul>
+        <li>Yahoo Finance endpoints for stock quotes, ticker suggestions, historical trends, NYSE and NASDAQ summaries, market movers, gold futures, and silver futures.</li>
+        <li>Official Thrift Savings Plan fund price history CSV for TSP fund share-price history.</li>
+        <li>U.S. Office of Personnel Management formula concepts for FERS and CSRS gross annuity estimates.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Supporting Website</h2>
+      <p>
+        This public support site is built as static HTML and CSS so it can be hosted simply with GitHub Pages. It provides product overview, help content, privacy details, release notes, screenshots, and technology information for the application.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CoreNucApps. All rights reserved.</p>
+    <p><a href="index.html">Home</a> | <a href="release.html">Release</a> | <a href="screenshots.html">Screenshots</a> | <a href="helppage.html">Help</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

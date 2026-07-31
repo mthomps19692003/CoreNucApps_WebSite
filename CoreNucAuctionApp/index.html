@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CoreNuc Auction App — Lazy Lions Edition</title>
+  <meta name="description" content="CoreNuc Auction App — Lazy Lions Edition manages in-person auctions from seller intake and bidder registration through live sales, checkout, pickup, settlement, reporting, and closeout." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #45e3a6;
+      --accent-dark: #078bc7;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bg), #020617);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .site-header {
+      background: #020617;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #0b2231, #123b4b);
+      color: var(--accent);
+      box-shadow: 0 0 18px rgba(69, 227, 166, 0.22);
+      font-size: 0.95rem;
+      letter-spacing: -1px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--accent);
+    }
+
+    header {
+      padding: 48px 20px;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 2.5rem);
+    }
+
+    header p {
+      max-width: 820px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 12px 22px;
+      background: var(--accent);
+      color: #052e24;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: var(--accent-dark);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    section {
+      margin-bottom: 36px;
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    .card p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 620px) {
+      .site-header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      section {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html" aria-label="CoreNuc Auction App — Lazy Lions Edition home">
+        <span class="brand-mark" aria-hidden="true">LL</span>
+        <span>Lazy Lions</span>
+      </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="release.html">Release</a>
+        <a href="technology.html">Technology</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="helppage.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <header>
+    <h1>CoreNuc Auction App — Lazy Lions Edition</h1>
+    <p>
+      Purpose-built for in-person auctions, the Lazy Lions Edition keeps events organized from seller intake through bidding, payment, item release, seller payout, and final closeout.
+    </p>
+    <a class="button" href="#support">Get Support</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>About the App</h2>
+      <p>
+        CoreNuc Auction App — Lazy Lions Edition gives auction organizers and staff one central Windows application for preparing catalogs, documenting buyer eligibility, recording live results, collecting payments, releasing purchased items, settling with consignors, and closing out an event.
+      </p>
+      <p>
+        Run a simple auction from one computer or connect several workstations over a local network for registration, live auction entry, and checkout. Internet access is not required for normal auction-night operation.
+      </p>
+    </section>
+
+    <section>
+      <h2>Key Features</h2>
+      <div class="features">
+        <div class="card">
+          <h3>Auction Setup</h3>
+          <p>Create events with the date, location, buyer's premium, and sales-tax rate, then monitor auction-night progress from the dashboard.</p>
+        </div>
+        <div class="card">
+          <h3>Catalog &amp; Consignors</h3>
+          <p>Register sellers, search and archive records, bulk-create lots from photos, track category, condition, dimensions, and storage, then print catalogs, intake sheets, or labels.</p>
+        </div>
+        <div class="card">
+          <h3>Buyer Registration &amp; Agreements</h3>
+          <p>Assign bidder numbers, capture terms and signature confirmation, record ID and deposit status, attach tax certificates, apply bidding restrictions, and print bidder documents.</p>
+        </div>
+        <div class="card">
+          <h3>Live Auction &amp; Command Mode</h3>
+          <p>Record results with configurable keyboard shortcuts or a focused command screen showing the current lot, photo, next lot, connection state, backup state, and last result.</p>
+        </div>
+        <div class="card">
+          <h3>Checkout, Receipts &amp; Pickup</h3>
+          <p>Find buyers by number or contact details, calculate charges, record payments and refunds, preview or save PDF receipts, and track paid items through pickup or shipping release.</p>
+        </div>
+        <div class="card">
+          <h3>Seller Settlements</h3>
+          <p>Calculate consignor proceeds and commissions, add approved deductions, and track settlement approval and payment.</p>
+        </div>
+        <div class="card">
+          <h3>Multi-Computer Sync</h3>
+          <p>Use one host and multiple local-network workstations so auction staff can work together without relying on the internet.</p>
+        </div>
+        <div class="card">
+          <h3>Staff Access &amp; Audit</h3>
+          <p>Protect sensitive actions with staff roles, PINs, manager approvals, record locks, and a searchable audit history.</p>
+        </div>
+        <div class="card">
+          <h3>Reports, Analytics &amp; Accounting</h3>
+          <p>Export operational reports, accounting-ready CSV schedules, and analytics for sell-through, bidder conversion, checkout time, category performance, and unsold inventory aging.</p>
+        </div>
+        <div class="card">
+          <h3>Communications Center</h3>
+          <p>Prepare registration confirmations, invoices, receipts, balance reminders, pickup notices, and settlement statements, then preserve the staff-reviewed communication history.</p>
+        </div>
+        <div class="card">
+          <h3>Privacy &amp; Customer Data</h3>
+          <p>Set retention periods, record communication consent, export a customer's information, and anonymize eligible archived records with manager approval.</p>
+        </div>
+        <div class="card">
+          <h3>Encrypted Backup &amp; Recovery</h3>
+          <p>Protect verified backups with AES-256 authenticated encryption and use auction-night recovery guidance after an interrupted session or host replacement.</p>
+        </div>
+        <div class="card">
+          <h3>Accessible Windows Experience</h3>
+          <p>Responsive, scroll-safe layouts support keyboard operation, visible focus, screen readers, Windows contrast themes, display scaling, and text-based status indicators.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Who It Is For</h2>
+      <ul>
+        <li>Local and community auction houses</li>
+        <li>Charity and fundraising auction organizers</li>
+        <li>Estate, consignment, and benefit auction teams</li>
+        <li>Cashiers, clerks, auctioneers, and event managers</li>
+        <li>Organizations that need a dependable offline-capable auction workflow</li>
+      </ul>
+    </section>
+
+    <section id="support">
+      <h2>Support</h2>
+      <p>
+        For support, questions, or feedback, please contact:
+        <a href="mailto:mthomps19692003@outlook.com">mthomps19692003@outlook.com</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Privacy Policy</h2>
+      <p>
+        View the privacy policy for CoreNuc Auction App — Lazy Lions Edition:
+        <a href="privacy.html">Privacy Policy</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Help</h2>
+      <p>
+        Find setup guidance and step-by-step auction workflows:
+        <a href="helppage.html">Help Page</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Technology</h2>
+      <p>
+        Learn about the technology behind CoreNuc Auction App — Lazy Lions Edition:
+        <a href="technology.html">Technology</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Screenshots</h2>
+      <p>
+        Preview the main auction management screens:
+        <a href="screenshots.html">Screenshots</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Latest Release</h2>
+      <p>
+        Review the latest improvements and updates:
+        <a href="release.html">Release Notes</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CoreNucApps. All rights reserved.</p>
+  </footer>
+</body>
+</html>

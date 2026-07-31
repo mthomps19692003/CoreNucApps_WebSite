@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help - CoreNuc Poker League Manager</title>
+  <meta name="description" content="Help guide for CoreNuc Poker League Manager, including tournament setup, phone remote, TV browser display, player management, chip inventory, prize payouts, tables, seating, saved games, stats, and settings." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #22c55e;
+      --accent-dark: #16a34a;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bg), #020617);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .site-header {
+      background: #020617;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .site-nav a:hover {
+      color: var(--accent);
+    }
+
+    header {
+      padding: 44px 20px;
+      background: rgba(15, 23, 42, 0.9);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .help-icon {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 auto;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 2.4rem;
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 6px 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    nav.toc-nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 0;
+    }
+
+    .toc {
+      background: rgba(17, 24, 39, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .toc h2 {
+      color: var(--accent);
+      margin: 0 0 16px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+
+    .toc-grid a {
+      display: block;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .toc-grid a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    section {
+      background: rgba(17, 24, 39, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+      margin-bottom: 24px;
+      scroll-margin-top: 16px;
+    }
+
+    section h2 {
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    p {
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .back-top {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .back-top:hover {
+      color: var(--accent-dark);
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 620px) {
+      .site-header-inner,
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">
+        <img src="corenucapps_logo_small.png" alt="CoreNucApps logo" />
+        <span>CoreNucApps</span>
+      </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="release.html">Release</a>
+        <a href="technology.html">Technology</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="helppage.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <header id="top">
+    <div class="header-inner">
+      <img class="help-icon" src="help_app_icon.png" alt="" />
+      <div>
+        <h1>Help</h1>
+        <p>Use this guide to understand what the application does, how a tournament is built, and what the end user can do during play.</p>
+        <p>CoreNuc Poker League Manager is designed for home poker leagues that want to run organized Texas Hold&#39;em tournament nights.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc-nav">
+    <div class="toc">
+      <h2>Contents</h2>
+      <div class="toc-grid">
+        <a href="#LatestReleaseSection">What's New In 2.1.1</a>
+        <a href="#GameSetupGuideSection">Game Setup Guide</a>
+        <a href="#WhatTheAppDoesSection">What The App Does</a>
+        <a href="#ScreenTourSection">Screen Tour</a>
+        <a href="#MinimumRequirementsSection">Minimum Requirements</a>
+        <a href="#PhoneRemoteSection">Phone Remote</a>
+        <a href="#TvBrowserDisplaySection">TV Browser Display</a>
+        <a href="#BasicWorkflowSection">Basic Workflow</a>
+        <a href="#TexasHoldemSection">Texas Holdem Page</a>
+        <a href="#TournamentOptionsSection">Tournament Options</a>
+        <a href="#SetupItemsSection">Players / Rounds / Chips</a>
+        <a href="#ChipInventorySection">Chip Inventory</a>
+        <a href="#PrizePayoutsSection">Prize Payouts</a>
+        <a href="#TablesSeatingSection">Tables And Seating</a>
+        <a href="#RunningTournamentSection">Running A Tournament</a>
+        <a href="#SavedGamesStatsSection">Saved Games And Stats</a>
+        <a href="#SettingsSoundsSection">Settings And Sounds</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="LatestReleaseSection">
+      <h2>What's New In Version 2.1.1</h2>
+      <p>Phone Control now remembers paired phones across browser reloads, renews active sessions, recovers more cleanly from dropped requests, and uses clearer pairing-code controls.</p>
+      <p>High Hand payment, entry, editing, replacement, and removal now work from the phone without changing seating. The player-facing timer has also been redesigned around a large countdown, current round and blinds, and upcoming blinds.</p>
+      <p>Rebuys and add-ons are included in the winner's final totals, completed Player Standings totals can be corrected, Player Actions remains available beside Admin Controls, and players can be busted out while the clock is paused.</p>
+      <p>TV Browser Game Details now matches the desktop Players / Seating, Prizes, Rounds, and two-column Notes layout and automatically fits the browser window.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="GameSetupGuideSection">
+      <h2>Step By Step Game Setup</h2>
+      <p>1. Start on the Texas Holdem page. Enter the game name, description, league, season, game type, and any notes that should be saved with the tournament.</p>
+      <p>2. Add or select the players for this game. Use Players from the Game Setup area, choose the players who are playing, then return to the Texas Holdem page.</p>
+      <p>3. Set up the blind rounds. Open Rounds, add the tournament levels and breaks, and select the round structure for the current game.</p>
+      <p>Rounds can be entered manually or created by the app. Create Rounds asks for the number of rounds, round length, starting blinds, blind increase, and breaks, then places breaks automatically before replacing the selected round setup.</p>
+      <p>4. Choose the tournament options. Open Tournament Options to select the buy-in, rebuy, and add-on records that apply to this game.</p>
+      <p>5. Build the chip set. Open Chips, select the chips used by the game, and confirm that the required chip quantities match the number of players.</p>
+      <p>The Texas Holdem page warns next to Chips if the selected chip set requires more physical chips than are available in Chip Inventory.</p>
+      <p>6. Set the prize payouts. Open Prizes, calculate or enter the payouts, and mark the prizes that should be displayed during the tournament.</p>
+      <p>7. Seat the players. Open Tables after the player list is final, then assign seats manually, randomly assign seats, or balance active players across tables.</p>
+      <p>8. Return to the Texas Holdem page and review the Game Setup indicators. Any item that still needs attention can be selected from that area.</p>
+      <p>The indicators now show more specific readiness details, such as missing buy-in, player count, prize totals, table seats needed, and chip inventory shortages.</p>
+      <p>9. Save the game. Saving stores the setup so it can be loaded again from Saved Games.</p>
+      <p>Use Save Template to store a reusable tournament preset. A template can include the buy-in, chips, rounds, prize setup, tables, late registration, game type, league, season, and other setup options so recurring games can be created faster.</p>
+      <p>10. Start the Main Display when the tournament is ready. The display runs the clock, shows the current round, warns before cutoff rounds, and lets you record or undo player actions during play.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="WhatTheAppDoesSection">
+      <h2>What The App Does</h2>
+      <p>CoreNuc Poker League Manager is used to set up, save, run, and review poker tournament games. The app stores reusable setup items such as players, chip sets, rounds, buy-ins, rebuys, add-ons, prizes, and table seating.</p>
+      <p>The goal is to keep tournament night organized: build the event once, reuse the setup later, run the clock, track player actions, and keep a record of results without using separate spreadsheets or handwritten notes.</p>
+      <p>A game is created from those setup items. Once the game is ready, the Main Display can be opened to run the tournament clock, track the current round, record player actions, and finish the game.</p>
+      <p>Saved results are used by Player Stats to build league and season standings, including points, wins, cashes, knockouts, average finish, and net results.</p>
+      <p>Most setup pages work the same way: add or edit reusable records, select the records for the current game, then return to the Texas Holdem page to continue building the tournament.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="ScreenTourSection">
+      <h2>Screen Tour</h2>
+      <p>The Texas Holdem page is the command center for a game. The setup status area shows what still needs attention before the tournament is ready.</p>
+      <p>Use the setup indicators to jump directly to Players, Rounds, Buy-ins, Add-ons, Rebuys, Chips, Prizes, or Tables. When those areas are complete, come back here to set registration cutoffs, save, and start the game.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="MinimumRequirementsSection">
+      <h2>Minimum Requirements</h2>
+      <p>Windows desktop: Windows 10 version 1809 or newer. Windows 11 is recommended for the best install and display experience.</p>
+      <p>Android phone or tablet: Android 5.0 or newer.</p>
+      <p>iPhone or iPad: iOS 15.0 or newer.</p>
+      <p>Phone remote: the Windows desktop app can host a local web controller for a phone on the same home network. Keep the Tournament Display open while the remote is in use.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="PhoneRemoteSection">
+      <h2>Phone Remote</h2>
+      <p>The Phone Remote lets the Windows desktop app start a local web controller that a phone can open on the same home network.</p>
+      <p>To use it, save or load a game, open the Tournament Display, then select Start Hosting in the Remote Connection area. The display shows the web address and a six-digit pairing code. The code is hidden by default after startup; use Show Pairing Code when another phone needs to connect, then hide it again.</p>
+      <p>Open the network address on the phone while it is connected to the same Wi-Fi network and enter the six-digit code. The phone shows the current game, round, timer, active players, busted players, and supported actions only after pairing succeeds.</p>
+      <p>A paired phone is remembered across browser reloads and tab timeouts. Active sessions stay paired and expire after 24 hours without activity or when Phone Control is stopped or restarted. Too many incorrect pairing attempts temporarily lock that device out.</p>
+      <p>Supported controller actions include starting or pausing the clock, moving to the previous or next round, undoing the latest player action, recording rebuys and add-ons, busting a player after selecting who busted them, and tracking High Hand payments and the current High Hand.</p>
+      <p>For High Hand, mark a player as paid and select the player's name to enter, change, or clear the current High Hand description. Keep the phone page open until confirmation appears; the update may take a few seconds and does not change seating.</p>
+      <p>The phone controller runs separately from the TV Browser Display. Phone Remote uses port 5088, while TV Browser Display uses port 5087, so both can be running from the same Tournament Display window at the same time.</p>
+      <p>Start or Pause on the phone uses the same tournament clock as the desktop button. Previous Round and Next Round load the adjacent round and pause normal rounds just like the desktop controls.</p>
+      <p>Undo Last Player Action reverses the latest reversible player action: bust-out, rebuy, or add-on. It does not undo setup changes, clock changes, or round movement.</p>
+      <p>The Rebuy button appears for active and busted players. If the selected rebuy setup requires the player to be out of chips, active-player rebuys are blocked and busted-player rebuys add the player back into the game.</p>
+      <p>The Add-on button is available for active players. If the selected add-on setup requires the player to still have chips, add-ons are blocked for busted players.</p>
+      <p>When a player action is recorded from the phone, the phone shows a confirmation popup. If the action is blocked by the tournament option rules, the phone shows the reason instead.</p>
+      <p>Privacy and control warning: only start hosting on a private network you trust, keep the pairing code private, and hide it when pairing is complete.</p>
+      <p>Stop hosting when phone control is no longer needed, and do not use this feature on public or guest Wi-Fi. The desktop Tournament Display remains the source of truth and must stay open.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="TvBrowserDisplaySection">
+      <h2>TV Browser Display</h2>
+      <p>The TV Browser Display is for showing tournament information on a TV or another computer through a web browser. It runs from the Tournament Display window and publishes a local web page on the host computer.</p>
+      <p>To get to it, save or load a game, select Start from the Texas Holdem page to open the Tournament Display, then select Customize. In the TV Browser Display area, choose the screens to include in the cycle.</p>
+      <p>Available TV screens include Tournament Display, Game Details, Timer, Blinds, Players, Tables, Prizes, and Recent Actions. Select only the screens you want shown on the TV.</p>
+      <p>Set the Delay value to control how many seconds each selected screen stays visible before the browser moves to the next screen. The app allows delays from 5 seconds to 300 seconds.</p>
+      <p>Select Start TV to start the lightweight web server. The Tournament Display will show a network URL and a local URL. Use the network URL for a TV or another device on the same home network.</p>
+      <p>On the TV, open its web browser and type the network URL exactly as shown, including http:// and the port number. The TV and the computer running CoreNuc Poker League Manager must be on the same Wi-Fi or wired network.</p>
+      <p>If the TV cannot connect, check that the computer is awake, CoreNuc Poker League Manager is still running, the TV is on the same network, and Windows Firewall allows the app to accept local network connections.</p>
+      <p>TV Browser Display and Phone Remote can run at the same time because they use different local web addresses. The TV display uses port 5087 and the phone controller uses port 5088.</p>
+      <p>Leave the Tournament Display open while the TV browser is in use. The browser refreshes tournament data automatically and cycles through the selected screens until Stop is selected or the Tournament Display is closed.</p>
+      <p>The Game Details screen uses the same Players / Seating, Prizes, Rounds, and two-column Notes layout as the desktop page and scales to fit the browser window.</p>
+      <p>If the TV browser display server is not available in the current build, the app will keep the Tournament Display usable and will not crash when the Tournament Display window is closed.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="BasicWorkflowSection">
+      <h2>Basic Workflow</h2>
+      <p>1. Start on the Texas Holdem page and enter the game information.</p>
+      <p>2. Add the required setup items: players, rounds, buy-ins, chips, prizes, and tables. Add-ons and rebuys are optional, but must be associated with the game before it starts if they will be used.</p>
+      <p>3. Set late registration rules if needed. Late registration can close when the game starts, after a selected round, after a selected number of minutes, or by whichever selected cutoff happens first.</p>
+      <p>4. Save the game so the setup can be loaded again later.</p>
+      <p>Tournament templates can also be saved and applied from the Texas Holdem page. Use them when the same home game setup is used often.</p>
+      <p>5. Start the Main Display when the tournament is ready to begin.</p>
+      <p>6. Record rebuys, add-ons, bust outs, round changes, and final results while the game is running. Use Undo Last when a bust-out, rebuy, or add-on was recorded by mistake.</p>
+      <p>7. Review Summary, Settlement, and Player Stats after the tournament is complete.</p>
+      <p>Settlement guides the end of the game through finish order, payouts, points, saving results, and viewing standings.</p>
+      <p>Optional shortcut: use Settings, Default Game to add a complete starter tournament, then load it from Saved Games and start from a ready example.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="TexasHoldemSection">
+      <h2>Texas Holdem Page</h2>
+      <p>The Texas Holdem page is the main game setup page. Enter the event name, description, league, season, game type, late registration rules, and notes for the tournament.</p>
+      <p>The Game Setup indicators show whether players, rounds, buy-ins, add-ons, rebuys, chips, prizes, and tables have been selected for the current game.</p>
+      <p>The indicators are actionable. They show details such as missing buy-in, how many players are added, whether chip inventory is short, prize payouts compared with the prize pool, and how many table seats still need players.</p>
+      <p>Selecting an indicator opens the related setup area. This lets the user quickly jump to the missing part of the game setup.</p>
+      <p>Save stores the current setup. Load brings an existing saved game back to the screen. New starts a fresh game. Reset clears the current screen after confirmation when a loaded game is active.</p>
+      <p>Save Template stores the current game setup as a reusable preset. Apply Template copies a saved preset onto the current game after confirmation.</p>
+      <p>If a game is in progress, using Exit or closing the main app window asks for confirmation before the app exits. Secondary windows can still be closed without that app-exit confirmation.</p>
+      <p>Start opens the tournament display for the saved game. Summary opens the action summary, and Settlement opens the end-of-game payout and player net-results review.</p>
+      <p>Game Details opens a read-only dashboard for the saved game. The dashboard shows Players / Seating, Rounds, Prizes, and Notes in scrollable cards so larger games can be reviewed without losing the surrounding layout.</p>
+      <p>Tooltips are available on the main buttons and explain what common actions will do before they are selected.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="TournamentOptionsSection">
+      <h2>Tournament Options</h2>
+      <p>Tournament Options is where buy-ins, add-ons, and rebuys are managed and selected for a game.</p>
+      <p>Buy-ins define the cost, rake, chips, points, and bounty chip cost for entering the tournament.</p>
+      <p>Rebuys define when a player can buy back in, how many times it is allowed, the cost, chips received, points, and limits.</p>
+      <p>A rebuy setup can require the player to be out of chips before a rebuy is recorded. When that rule is enabled, rebuy is blocked for active players and allowed for busted players. A successful rebuy adds the busted player back into the game.</p>
+      <p>Add-ons define extra chip purchases that may be allowed during the tournament, including cost, chips, points, limits, and the last round allowed.</p>
+      <p>An add-on setup can require the player to still have chips before an add-on is recorded. When that rule is enabled, add-ons are blocked for busted players.</p>
+      <p>Rebuys and add-ons automatically close after their configured last round. When the Main Display is about to start a round that closes an option, the app shows a warning before continuing.</p>
+      <p>For a saved game, selecting a buy-in, rebuy, or add-on attaches it to that game. The selected records are then used by the tournament display and player action logs.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="SetupItemsSection">
+      <h2>Players, Rounds, Chips, Prizes, And Tables</h2>
+      <p>Players lets the user maintain player records and add selected players to the current game. Players added to the game stay visible in the list and can be removed before the tournament starts.</p>
+      <p>After the tournament starts, adding players follows the saved late registration rules. If late registration is closed, the app prevents the player from being added and explains why.</p>
+      <p>A player cannot be deleted while attached to a game in progress. Remove or complete the game connection before deleting the player record.</p>
+      <p>Rounds lets the user create blind levels, break rounds, and saved round structures that can be reused in future games.</p>
+      <p>Create Rounds can build a full blind structure automatically. It asks for the number of playing rounds, minutes per round, number and length of breaks, starting small and big blinds, and blind increase percentage. Breaks are placed so the tournament does not go more than 60 minutes between breaks when possible; if there are not enough breaks, they are spaced evenly.</p>
+      <p>Chips lets the user create chip sets and select the chips used for the current game.</p>
+      <p>Prizes lets the user define prize payouts, awarded places, points, shared amounts, and displayed prize information.</p>
+      <p>Chip, round, and prize setup deletion includes guardrails. If a setup is already used by saved games or templates, the app offers archive or duplicate-and-edit instead of silently deleting the original setup.</p>
+      <p>Tables lets the user seat players manually, randomly assign players to seats, clear seating, or balance active players across tables during tournament play.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="ChipInventorySection">
+      <h2>Chip Inventory And Chip Sets</h2>
+      <p>Chip Inventory tracks the physical chips available to the tournament director. Add each chip color, value, and quantity so the app can compare chip sets against the chips actually on hand.</p>
+      <p>Chip Setup creates the chip set used by a tournament. Each chip in the set is picked from inventory, then assigned a per-player quantity. The page shows how many chips are required for the current player count and whether inventory is short.</p>
+      <p>The main Game Setup area also checks chip inventory. If the selected chip setup does not have enough chips for the players in the game, the Chips indicator turns into a warning and lists the first shortages.</p>
+      <p>If the correct chip is not already in inventory, choose the add-inventory option from the chip picker while adding or editing a chip set item.</p>
+      <p>If an inventory chip is already used in a chip set, the app prevents deleting it and warns before editing it. Remove the chip from all chip sets before deleting that inventory record.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="PrizePayoutsSection">
+      <h2>Prize Payouts</h2>
+      <p>Prizes can be entered manually or calculated from the current game. Default prize calculation uses the selected buy-in fee and the number of active players bought into the game.</p>
+      <p>Calculate Default Prizes asks how many paid places should receive payouts and what the maximum first-place points should be. It then builds all places for the current player count so unpaid places can still receive points.</p>
+      <p>Default payouts are rounded using the saved prize formula settings. Display is checked only for rows that have a payout amount, and the calculation will not exceed the current buy-in prize pool.</p>
+      <p>Before the calculated prizes replace the selected setup, the app shows a preview with each place, payout, percent, points, and Display status. Accept the preview to replace the setup or cancel to leave the existing prizes unchanged.</p>
+      <p>The Prizes page shows a summary with total prize pool, displayed payouts, remaining unassigned amount, and a warning if displayed payouts exceed buy-ins.</p>
+      <p>Displayed prizes are attached to the current game. Extra prize rows can remain saved in the setup but be hidden from the tournament display by turning Display off.</p>
+      <p>After the tournament is complete, Settlement can be used to review gross collected, rake, net prize pool, payouts, and each player&#39;s net result.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="TablesSeatingSection">
+      <h2>Tables And Seating</h2>
+      <p>Tables uses the players in the current game to create seating groups. The app supports manual seat assignment, random assignment, and clearing seats when the layout needs to be rebuilt.</p>
+      <p>The Tables screen shows only the number of seats required for the active players unless the user adds more seats. Seat labels are consecutive and arranged clockwise around the table.</p>
+      <p>Random Assign fills the actual seats shown for the current player count and spreads players across the displayed tables. Add Table and Add Seat can be used when the host wants extra space or a custom layout.</p>
+      <p>Remove Seat and Remove Table are available from each table card. If the seat or table has assigned players, the app asks for confirmation before clearing those assignments.</p>
+      <p>Use seating after players have been added to the game. If players are added during late registration, revisit Tables and balance the active players when needed.</p>
+      <p>Balance Tables works only with active players. Busted players stay in their recorded finish positions while remaining players are redistributed as evenly as possible.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="RunningTournamentSection">
+      <h2>Running A Tournament</h2>
+      <p>Start opens the Main Display in its own window. This lets the tournament display stay active while the main setup window remains available.</p>
+      <p>The clock does not begin until Start is selected on the Main Display. Pause and Resume control the timer during play.</p>
+      <p>The display shows the current round, blinds, ante when applicable, upcoming round information, and the active player list.</p>
+      <p>The separate Timer Display is designed for a player-facing screen, with a large countdown and side-by-side current and upcoming blinds that scale up in a larger or full-screen window.</p>
+      <p>Next Round moves immediately to the next configured round. When the timer reaches zero, the display advances to the next round.</p>
+      <p>If the next round closes late registration, rebuys, or add-ons, the app warns before the round starts. Rebuys and add-ons are disabled automatically after their cutoff.</p>
+      <p>During the game, the user can record player rebuys, add-ons, and bust outs. Bust-out prompts use player nicknames so the confirmation popup stays easy to scan.</p>
+      <p>Players can be busted out while the clock is running or paused. Player Actions remains available beside Show or Hide Admin Controls.</p>
+      <p>If the selected rebuy setup requires players to be out of chips, use Rebuy from the busted player list or the phone remote&#39;s Busted Players section. If the selected add-on setup requires players to have chips, add-ons are available only for active players.</p>
+      <p>Undo Last reverses the latest bust-out, rebuy, or add-on. The Recent Actions area shows the latest tournament activity so mistakes can be spotted quickly.</p>
+      <p>When Phone Remote hosting is running, the phone controller can start or pause the clock, move rounds, undo the latest player action, and record supported player actions. Keep the web address private inside your trusted home network.</p>
+      <p>Player Actions opens the tournament control panel for active and busted players. It can record rebuys, add-ons, bust-outs, receipts, restore busted players, and correct who busted a player.</p>
+      <p>The Player Actions button has a tooltip with a quick summary of those controls. Hover over the button on desktop when you need a reminder without opening the panel.</p>
+      <p>When only one active player remains, the game is ended and the winner is recorded. The winner's final paid-in total includes buy-ins, rebuys, and add-ons.</p>
+      <p>The end-of-game Settlement workflow helps confirm finish order, assign payouts, confirm points, save results, and view standings.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="SavedGamesStatsSection">
+      <h2>Saved Games And Stats</h2>
+      <p>Saved Games lets the user load a previously saved tournament setup. If that game is saved again, the existing record is updated instead of creating a duplicate.</p>
+      <p>Tournament Templates are reusable presets for recurring games. A template can bundle buy-in, chips, rounds, prize setup, tables, league, season, game type, late registration, and scoring options so the next game starts from a known setup.</p>
+      <p>Save Template creates or updates a template from the current saved game. Apply Template copies a selected template onto the current game after confirmation.</p>
+      <p>Player Stats now works as a standings page. It can show a season leaderboard by league and season, with player rank, games played, score, wins, cashes, knockouts, average finish, paid, won, and net.</p>
+      <p>Select a player to review status, career statistics, and tournament history. For a completed tournament, Edit Completed Game Totals can correct finish position, paid-in amount, winnings, or standing points; active tournaments cannot be edited from standings.</p>
+      <p>Overall score is calculated as 5 participation points per game played, plus finish points, plus 10 points for each win, plus 5 points for each cash, plus 2 points for each knockout.</p>
+      <p>Finish points are based on the tournament field size. The formula is players started minus finish position plus 1, so a winner in a 12-player tournament receives 12 finish points, second place receives 11, and last place receives 1.</p>
+      <p>Use the start and end date fields, League picker, and Season picker to narrow the standings. Column headers can be selected to sort the results ascending or descending.</p>
+      <p>Export on Player Stats creates an Excel-readable standings file using the currently displayed results. Date range, league, season, and sort order are included in the export.</p>
+      <p>Paid includes buy-ins, rebuys, and add-ons. Net is calculated as winnings minus paid. Knockouts come from recorded bust-out credit, and average finish is based on completed player results.</p>
+      <p>Stats are only as complete as the actions recorded during play, so record buy-ins, rebuys, add-ons, bust outs, and final results from the tournament display whenever possible.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+    <section id="SettingsSoundsSection">
+      <h2>Settings And Sounds</h2>
+      <p>Settings controls the app theme, receipt content, button display mode, and tournament sounds. Sound choices are used by the Main Display for player bust outs, one-minute warnings, and round changes.</p>
+      <p>Prize Formula Defaults in Settings control the usual number of paid places, default maximum points, payout rounding increment, and whether unpaid places should be created for points when calculating default prizes.</p>
+      <p>The Database area in Settings lets the user check database health, create a Safety Backup, export or import a database backup, or add the built-in Default Game. Check Health verifies important relationships and safely repairs supported legacy duplicate records. Safety Backup keeps the five newest rotating protective copies.</p>
+      <p>Import automatically creates a safety backup before adding to or replacing the current data. Application errors are written to structured daily local logs and retained for 14 days to support troubleshooting.</p>
+      <p>When importing a database backup, Replace removes the current database after a warning and restores the selected file. Add to Existing Database keeps the current data and adds the imported records as new records.</p>
+      <p>Default Game is optional and only runs when the user chooses it. It adds a ready-to-load starter tournament without deleting existing data.</p>
+      <p>The Default Game includes 10 sample players, one seated table, a $25 buy-in with 9,000 starting chips, a $15 rebuy for 4,500 chips, a $10 add-on for 3,000 chips, chip values from $5 through $5,000, 15 levels with 3 breaks, and top-three prizes with third place fixed at $25.</p>
+      <p>After importing the Default Game, open Saved Games, load the new Default Starter Game, review the setup if desired, and start the Main Display when ready.</p>
+      <p>Main Page Picker Values in Settings lets the user add, edit, or delete the League, Season, and Game Type choices shown on the Texas Holdem page. Items attached to a game in progress cannot be deleted.</p>
+      <p>Display settings control the theme, button display mode, and the option to disable the system screen saver while the tournament display is running.</p>
+      <p>Receipt settings let the user choose which tournament details appear when a player receipt is generated, including buy-ins, rebuys, add-ons, and totals.</p>
+      <p>If a custom sound is added, keep the file available on the device where the tournament is being run.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CoreNucApps. All rights reserved.</p>
+    <p><a href="index.html">Home</a> | <a href="release.html">Release</a> | <a href="technology.html">Technology</a> | <a href="screenshots.html">Screenshots</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Complete help guide for creating, importing, editing, publishing, and recovering projects in CoreNucApps Blueprint Studio.">
+  <title>Help | CoreNucApps Blueprint Studio</title><link rel="icon" href="help_app_icon.png"><link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-shell"><a class="brand" href="index.html"><img src="corenucapps_logo_small.png" alt=""><span>Blueprint Studio<small>CoreNucApps</small></span></a><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="release.html">Release</a><a href="technology.html">Technology</a><a href="screenshots.html">Screenshots</a><a href="helppage.html" aria-current="page">Help</a><a href="privacy.html">Privacy</a></nav></div></header>
+  <div class="page-hero"><p class="eyebrow">Blueprint Studio help</p><h1>From first component to finished document.</h1><p class="lede">A practical guide to creating, importing, editing, organizing, and publishing technical drawings.</p></div>
+  <main id="main" class="prose">
+    <nav class="toc" aria-label="Help topics"><a href="#quick-start">Quick start</a><a href="#editing">Editing</a><a href="#workspaces">Workspaces</a><a href="#importing">Importing</a><a href="#publishing">Publishing</a><a href="#reliability">Files &amp; recovery</a><a href="#navigation">Navigation</a><a href="#shortcuts">Shortcuts</a><a href="#support">Support</a></nav>
+
+    <h2 id="quick-start">Quick start</h2>
+    <p>Blueprint Studio opens with a start center. Choose a network diagram, floor plan, workflow, mechanical drawing, electrical diagram, software architecture, or database diagram. You can also import AWS or spreadsheet inventory, analyze a C# solution, map a database, import a C# workflow, open a recent project, or choose a starter template.</p>
+    <ol><li>Choose a component from the library.</li><li>Drag it into position on the canvas.</li><li>Select it and edit its name, address, status, size, rotation, and notes in <strong>Properties</strong>.</li><li>Choose <strong>Connect</strong>, then select two components.</li><li>Choose <strong>Save</strong> for an editable project or <strong>Publish</strong> for shareable output.</li></ol>
+    <div class="callout">To return to the welcome choices later, open <strong>New</strong> and choose <strong>Start center</strong>.</div>
+
+    <h2 id="editing">Professional editing tools</h2>
+    <h3>Selection and arrangement</h3>
+    <ul><li>Hold <strong>Ctrl</strong> while selecting to add or remove individual components. Hold <strong>Shift</strong> to add a component or group.</li><li>Drag across empty canvas space for marquee selection, or press <strong>Ctrl+A</strong> to select every visible, unlocked component.</li><li>Use <strong>Edit</strong> to copy, paste, duplicate, align, distribute, group, ungroup, or lock the selection.</li><li>Drag a selected component's handles to resize or rotate it. Snap-to-grid is on by default and can be toggled from <strong>Edit</strong>.</li><li>Use the Layers panel to add layers, move selected components, and control visibility or locking.</li></ul>
+    <h3>Connections</h3>
+    <p>Choose <strong>Connect</strong> and select the first and second component. Double-clicking a component also begins a connection. Select a connection line or label to edit its visible label and flow: none, forward, reverse, or bidirectional. Double-click a connector to add a routing point, then drag its handle around other components. Press <strong>Esc</strong> to leave connection mode.</p>
+
+    <h2 id="workspaces">Drawing workspaces</h2>
+    <h3>Networks and infrastructure</h3><p>The library includes servers, virtual machines, databases, routers, network switches, firewalls, cloud/internet services, and client devices. Each component can carry a name, IP address or hostname, status, and notes.</p>
+    <h3>Mechanical drawings</h3><p>Use plates, shafts, bearings, gears, holes, motors, pumps, dimension lines, and center lines. Edit exact width, height, and rotation. Units can switch between millimeters and inches without changing visual scale.</p>
+    <h3>Electrical diagrams</h3><p>Build with power sources, grounds, resistors, capacitors, inductors, switches, lamps, transformers, junctions, and outlets. Wiring is directionless by default, but labels and flow arrows remain available.</p>
+    <h3>House floor plans</h3><p>Begin with rooms and walls, then place doors, windows, stairs, beds, sofas, tables, sinks, and toilets. Floor plans default to feet and can convert between feet, inches, and millimeters.</p>
+    <h3>Workflow diagrams and C# generation</h3><p>Add one Start node, process and action nodes, decisions, and one or more End nodes. Decisions require two outgoing Yes/No paths. <strong>Generate C#</strong> validates reachability, dead ends, termination, fan-out, and branch labels before producing an asynchronous state-machine class or a complete Visual Studio project.</p>
+
+    <h2 id="importing">Import and discover</h2>
+    <h3>Analyze C# source</h3><p>Choose <strong>Import → Analyze C# source folder</strong>. Blueprint Studio parses source locally and maps controllers, UI/view models, services, repositories, data models, data stores, dependencies, method calls, Entity Framework relationships, API routes, and detected <code>HttpClient</code> flows. Source code is read-only and is not uploaded or modified.</p>
+    <h3>Spreadsheet inventory</h3><p>Import <code>.csv</code>, <code>.xlsx</code>, or <code>.xlsm</code> files. Map columns to resource name, type, address, status, connections, or notes; choose how to handle duplicate names; and review skipped rows, unknown types, duplicate records, and missing targets before creating the diagram.</p>
+    <h3>Map a database</h3><p>Choose SQL Server/Azure SQL, PostgreSQL, MySQL/MariaDB, Oracle, or SQLite. Test the connection, load metadata, search the object list, and select what to map. Generated cards include schemas, object types, columns or parameters, data types, nullability, and primary keys. Foreign keys become labeled directional connectors. Access is read-only, and credentials are never saved in the drawing.</p>
+    <h3>Import and refresh AWS</h3><p>Select a named AWS profile or the default credential chain and choose a region. The importer reads VPCs, subnets, EC2 instances, RDS databases, and load balancers without changing resources or storing access keys. Refresh matches stable AWS identifiers, preserves placement and manual edits, adds new resources, and marks resources no longer returned as offline for review.</p>
+    <h3>Import a workflow</h3><p>Choose <strong>Import → C# workflow state machine</strong> to reconstruct a diagram from Blueprint Studio-generated code or compatible C# built around a <code>WorkflowStep</code> enum and switch-based state machine.</p>
+
+    <h2 id="publishing">Files and publishing</h2>
+    <ul><li><strong>Save</strong> writes an editable <code>.blueprint.json</code> project.</li><li><strong>Open</strong> restores a saved project; legacy <code>.topology.json</code> files remain supported.</li><li><strong>PNG</strong> produces a high-quality image at 150, 300, or 600 DPI.</li><li><strong>SVG</strong> produces scalable vector output.</li><li><strong>PDF</strong> publishes every project page; Report PDF adds a branded component inventory.</li><li><strong>Print</strong> opens normal Windows printer selection with the selected page setup.</li></ul>
+    <p>The publishing window supports Letter, A4, Legal, and Tabloid paper; portrait or landscape orientation; legends; title blocks; drawing number; revision; author; approver; and drawing date. Keep the Blueprint project as the editable source after publishing.</p>
+
+    <h2 id="reliability">Document reliability and templates</h2>
+    <p>Projects save atomically so an interrupted write does not leave a partial document. While a drawing has unsaved changes, a recovery copy is written every 30 seconds. After an unexpected shutdown, the next launch offers to restore it. Saving or intentionally discarding changes removes the recovery copy.</p>
+    <p>The Open menu lists up to ten recent drawings. Three built-in templates are available, and any current drawing can be saved as a portable <code>.blueprint-template.json</code> file. Blueprint Studio asks whether to save, discard, or cancel before replacing or closing unsaved work.</p>
+
+    <h2 id="navigation">Navigation, pages, and themes</h2>
+    <p>Use <strong>+</strong> and <strong>−</strong> to zoom, <strong>Fit</strong> to show the full drawing, and scrollbars for larger canvases. Use Pan, hold <strong>Space</strong>, or drag with the middle mouse button to move around. Hide or resize the library and properties panels to give the canvas more room.</p>
+    <p>Project pages appear along the bottom. Add, select, or delete pages there; each page keeps its own components, connectors, paper setup, legend, and title-block visibility. In Settings, choose Light, Medium, or CoreNuc Dark. Theme changes apply immediately and are remembered.</p>
+
+    <h2 id="shortcuts">Keyboard shortcuts</h2>
+    <table><thead><tr><th>Shortcut</th><th>Action</th></tr></thead><tbody>
+      <tr><td><code>Ctrl+S</code></td><td>Save the drawing</td></tr><tr><td><code>Ctrl+Z</code> / <code>Ctrl+Y</code></td><td>Undo / redo</td></tr><tr><td><code>Ctrl+A</code></td><td>Select all visible, unlocked components</td></tr><tr><td><code>Ctrl+C</code> / <code>Ctrl+V</code></td><td>Copy / paste</td></tr><tr><td><code>Ctrl+D</code></td><td>Duplicate selection</td></tr><tr><td><code>Ctrl+G</code> / <code>Ctrl+Shift+G</code></td><td>Group / ungroup</td></tr><tr><td><code>Delete</code></td><td>Remove selection</td></tr><tr><td><code>Space</code></td><td>Temporarily pan canvas</td></tr><tr><td><code>Esc</code></td><td>Cancel connection mode</td></tr><tr><td><code>Ctrl+P</code></td><td>Open publishing</td></tr><tr><td><code>F1</code></td><td>Open help</td></tr>
+    </tbody></table>
+
+    <h2>Accessibility and diagnostics</h2>
+    <p>Primary commands are reachable with Tab and Shift+Tab. Press Alt to reveal access keys. A high-visibility focus outline identifies the active control, and status changes are announced to assistive technology. Local structured diagnostics are retained for 14 days in the Blueprint Studio application-data folder. They remain on your computer unless you choose to share them and do not intentionally contain drawings or AWS credentials.</p>
+
+    <h2 id="support">Support</h2>
+    <p>For product questions, troubleshooting, or feedback, email <a href="mailto:mthomps19692003@outlook.com">mthomps19692003@outlook.com</a>. If reporting an unexpected problem, include the short report identifier shown by Blueprint Studio and describe what you were doing when it occurred.</p>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><p>&copy; 2026 CoreNucApps. Technology made clear.</p><div class="footer-links"><a href="privacy.html">Privacy</a><a href="screenshots.html">Screenshots</a><a href="index.html">Home</a></div></div></footer>
+</body>
+</html>

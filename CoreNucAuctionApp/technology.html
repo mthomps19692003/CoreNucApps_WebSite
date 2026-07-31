@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technology - CoreNuc Auction App — Lazy Lions Edition</title>
+  <meta name="description" content="Technology used to build CoreNuc Auction App — Lazy Lions Edition, including .NET 10, WPF, SQLite, SignalR, AES-GCM backup encryption, accessibility, testing, MSIX, and Windows installers." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #45e3a6;
+      --accent-dark: #078bc7;
+      --border: #334155;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bg), #020617);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .site-header {
+      background: #020617;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #0b2231, #123b4b);
+      color: var(--accent);
+      box-shadow: 0 0 18px rgba(69, 227, 166, 0.22);
+      font-size: 0.95rem;
+      letter-spacing: -1px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible { color: var(--accent); }
+
+    header {
+      padding: 44px 20px;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 2.45rem);
+    }
+
+    header p {
+      max-width: 860px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    h2 { margin-top: 0; color: var(--accent); }
+    h3 { margin-top: 0; color: var(--text); }
+    p, li { color: var(--muted); }
+    ul { padding-left: 22px; margin-bottom: 0; }
+    li { margin-bottom: 7px; }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      background: rgba(69, 227, 166, 0.12);
+      border: 1px solid rgba(69, 227, 166, 0.4);
+      border-radius: 8px;
+      color: var(--text);
+      padding: 8px 10px;
+      font-weight: bold;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.95rem;
+    }
+
+    footer a { color: var(--accent); }
+
+    @media (max-width: 620px) {
+      .site-header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html" aria-label="CoreNuc Auction App — Lazy Lions Edition home">
+        <span class="brand-mark" aria-hidden="true">LL</span>
+        <span>Lazy Lions</span>
+      </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="release.html">Release</a>
+        <a href="technology.html">Technology</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="helppage.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <header>
+    <h1>Technology</h1>
+    <p>CoreNuc Auction App — Lazy Lions Edition uses a modern Windows desktop stack for responsive auction operation, dependable local records, local-network teamwork, controlled financial workflows, accessibility, reporting, encrypted backups, recovery, and Microsoft Store packaging.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Core Application Stack</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>.NET 10</h3>
+          <p>The application targets .NET 10 for Windows and uses a self-contained release build so customers do not need to install .NET separately.</p>
+        </div>
+        <div class="card">
+          <h3>Windows Presentation Foundation</h3>
+          <p>WPF provides the native Windows desktop application framework, window management, controls, data grids, printing integration, and input handling.</p>
+        </div>
+        <div class="card">
+          <h3>C#</h3>
+          <p>C# powers auction rules, persistence, financial calculations, synchronization, imports, reports, backups, printing, updates, and security services.</p>
+        </div>
+        <div class="card">
+          <h3>XAML</h3>
+          <p>XAML defines the dashboard, catalog, live auction, checkout, settlements, reports, staff tools, settings, help content, shared styles, and visual resources.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Supported Platform</h2>
+      <ul class="tag-list">
+        <li>Windows Desktop</li>
+        <li>Windows x64</li>
+        <li>.NET 10</li>
+        <li>WPF</li>
+        <li>Self-Contained Installer</li>
+        <li>Microsoft Store MSIX</li>
+        <li>Per-Monitor DPI</li>
+        <li>Local-First Operation</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Local Data and Persistence</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>SQLite</h3>
+          <p>A local SQLite database stores auctions, consignors, bidders, lots, results, invoices, payments, settlements, staff records, audit history, and synchronization state.</p>
+        </div>
+        <div class="card">
+          <h3>Microsoft.Data.Sqlite</h3>
+          <p>The official .NET data provider executes schema creation, migrations, queries, transactions, indexes, and integrity checks.</p>
+        </div>
+        <div class="card">
+          <h3>SQLitePCLRaw</h3>
+          <p>The bundled native SQLite runtime supports dependable deployment without requiring a separate database server installation.</p>
+        </div>
+        <div class="card">
+          <h3>Transactional Safeguards</h3>
+          <p>Financial operations, imports, corrections, and synchronized changes use database transactions and validation so related updates succeed or fail together.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Local-Network Synchronization</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>ASP.NET Core</h3>
+          <p>The designated auction computer can host a lightweight local service for other Lazy Lions workstations on the trusted network.</p>
+        </div>
+        <div class="card">
+          <h3>SignalR</h3>
+          <p>ASP.NET Core SignalR coordinates workstation connections and distributes auction changes between the host and connected clients.</p>
+        </div>
+        <div class="card">
+          <h3>Queued Changes</h3>
+          <p>Each workstation keeps its own database and can queue supported changes while temporarily offline, then synchronize when the connection returns.</p>
+        </div>
+        <div class="card">
+          <h3>Conflict Controls</h3>
+          <p>Unique record keys, host-authoritative financial totals, versioned records, and temporary invoice or settlement locks help prevent conflicting work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Security and Audit</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>Role-Based Access</h3>
+          <p>Built-in and custom roles limit access to auction setup, cataloging, registration, live entry, checkout, settlements, reports, imports, settings, and corrections.</p>
+        </div>
+        <div class="card">
+          <h3>Protected Credentials</h3>
+          <p>Staff PIN credentials and the separate manager approval PIN protect sign-in and higher-risk financial actions without storing plain-text PINs.</p>
+        </div>
+        <div class="card">
+          <h3>Audit Trail</h3>
+          <p>Security and operational events retain the person, role, action, record type, detail, time, and workstation needed for review.</p>
+        </div>
+        <div class="card">
+          <h3>Safety Locks</h3>
+          <p>Temporary record locks prevent two checkout or settlement workstations from editing the same financial record simultaneously.</p>
+        </div>
+        <div class="card">
+          <h3>PBKDF2 Credential Hashing</h3>
+          <p>Staff and manager PINs use per-credential random salts, PBKDF2-SHA-256 derivation, and fixed-time verification instead of plain-text storage.</p>
+        </div>
+        <div class="card">
+          <h3>AES-GCM Backup Encryption</h3>
+          <p>Optional encrypted backups use AES-256-GCM with PBKDF2-SHA-256 key derivation, authenticated metadata, and a Windows-protected local password configuration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Documents, Reports, and Hardware</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>Windows Printing</h3>
+          <p>WPF document and print services generate lot labels, inventory sheets, bidder cards, receipts, consignor statements, and printable auction documents.</p>
+        </div>
+        <div class="card">
+          <h3>Receipt Printers and Drawers</h3>
+          <p>Windows printer integration and supported raw printer commands enable receipt output, paper cutting, and printer-connected cash-drawer operation.</p>
+        </div>
+        <div class="card">
+          <h3>Barcode and QR Input</h3>
+          <p>Keyboard-mode scanners can read Lazy Lions lot labels, bidder cards, invoice codes, and supported QR payloads without a proprietary scanner driver.</p>
+        </div>
+        <div class="card">
+          <h3>CSV, Excel, and PDF</h3>
+          <p>Import and reporting services work with common auction-data formats and generate closeout reports, PDF receipts, analytics, and accounting schedules.</p>
+        </div>
+        <div class="card">
+          <h3>Catalog Photo Processing</h3>
+          <p>WPF imaging decodes supported formats, scales large images to a practical maximum, and creates normalized JPEG copies in the local catalog-photo folder.</p>
+        </div>
+        <div class="card">
+          <h3>Windows Email Drafts</h3>
+          <p>Customer messages are generated locally and opened in the default Windows email application for staff review and manual sending.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Backup, Import, and Diagnostics</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>Verified Encrypted Backups</h3>
+          <p>Automatic and manual database backups include checksums and manifests, support optional authenticated encryption, retain rotating copies, and create a safety backup before restore.</p>
+        </div>
+        <div class="card">
+          <h3>Import Validation</h3>
+          <p>CSV, ZIP, and Excel imports are normalized, validated, previewed, fingerprinted, backed up, and applied transactionally.</p>
+        </div>
+        <div class="card">
+          <h3>Closeout Packages</h3>
+          <p>Final closeout combines reports, a verified database backup, and a checksum manifest for organized record retention.</p>
+        </div>
+        <div class="card">
+          <h3>Privacy-Aware Diagnostics</h3>
+          <p>Support packages report application, system, database-health, and sync status while excluding auction records, customer data, payments, PINs, and sync keys.</p>
+        </div>
+        <div class="card">
+          <h3>Interrupted-Session Recovery</h3>
+          <p>A session marker detects unsafe shutdown and builds a recovery snapshot with the latest sale, pending changes, connection state, open financial work, and newest verified backup.</p>
+        </div>
+        <div class="card">
+          <h3>Privacy Operations</h3>
+          <p>Dedicated services support retention configuration, append-only consent history, customer JSON export, eligibility checks, and manager-approved anonymization.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Features Supported by the Stack</h2>
+      <ul>
+        <li>Auction event setup with premiums, tax rates, dashboard totals, and progress tracking.</li>
+        <li>Consignor and bidder registration with contact, commission, and tax-exempt information.</li>
+        <li>Bulk catalog intake, photo normalization, categories, condition, dimensions, storage, duplication, renumbering, search, and archiving.</li>
+        <li>Buyer terms, signature confirmation, ID and deposit status, restrictions, and tax-certificate attachments.</li>
+        <li>Live sale entry and a keyboard-first command mode for sold, passed, withdrawn, no-sale, navigation, and correction outcomes.</li>
+        <li>Invoice calculation, adjustments, payments, refunds, PDF receipts, finalization, and buyer transfers.</li>
+        <li>Pickup, shipping, storage, identity-check, signature, tracking, and item-release records.</li>
+        <li>Consignor commissions, deductions, approval, payout tracking, and statements.</li>
+        <li>Consent-aware customer communications with prepared-message history.</li>
+        <li>Cash-drawer sessions with opening counts, expected totals, counted cash, and over/short reconciliation.</li>
+        <li>Multi-workstation synchronization, offline queues, versioning, and record-lock protection.</li>
+        <li>Reports, imports, audit exports, verified backups, final closeout, and controlled reopen workflows.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Accessibility and Windows Integration</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>UI Automation</h3>
+          <p>Accessible names, control types, states, labels, and status announcements support Narrator and Windows accessibility inspection tools.</p>
+        </div>
+        <div class="card">
+          <h3>Keyboard and Focus</h3>
+          <p>Shared visible-focus styling, documented shortcuts, predictable tab order, and scroll-safe dialogs support keyboard-only operation.</p>
+        </div>
+        <div class="card">
+          <h3>High Contrast</h3>
+          <p>Windows contrast-theme detection and text-plus-symbol statuses keep connection, warning, paid, and completion states understandable without relying on color alone.</p>
+        </div>
+        <div class="card">
+          <h3>Responsive Desktop Layout</h3>
+          <p>Minimum-size and scroll behavior, PerMonitorV2 DPI awareness, and scaling validation support 1024×768 displays and Windows scaling through 200%.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Testing and Release Engineering</h2>
+      <div class="tech-grid">
+        <div class="card">
+          <h3>xUnit</h3>
+          <p>Automated tests cover data, migrations, imports, invoices, settlements, synchronization, security, backups, recovery, privacy, communications, agreements, pickup, catalog tools, analytics, accessibility, performance, and production readiness.</p>
+        </div>
+        <div class="card">
+          <h3>WiX Toolset</h3>
+          <p>WiX builds the Windows MSI and customer setup executable for per-machine installation, upgrades, Start menu integration, and managed deployment.</p>
+        </div>
+        <div class="card">
+          <h3>Microsoft Store MSIX</h3>
+          <p>A separate Store pipeline builds the registered CoreNuc Auction App package, validates Partner Center identity and assets, and delegates application updates to Microsoft Store.</p>
+        </div>
+        <div class="card">
+          <h3>Self-Contained Publishing</h3>
+          <p>The x64 package bundles the application, .NET desktop and ASP.NET runtimes, and native SQLite components.</p>
+        </div>
+        <div class="card">
+          <h3>Signing and Verification</h3>
+          <p>The release pipeline supports Authenticode signing, RFC 3161 timestamps, signature verification, SHA-256 hashes, and checksum-verified automatic updates.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Supporting Website</h2>
+      <p>This public support site uses static HTML and CSS for simple hosting, fast loading, and minimal dependencies. It provides the product overview, release notes, technology details, help guide, screenshots, and privacy policy.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CoreNucApps. All rights reserved.</p>
+    <p><a href="index.html">Home</a> | <a href="release.html">Release</a> | <a href="screenshots.html">Screenshots</a> | <a href="helppage.html">Help</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

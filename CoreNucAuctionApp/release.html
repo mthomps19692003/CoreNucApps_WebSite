@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Release Notes - CoreNuc Auction App — Lazy Lions Edition</title>
+  <meta name="description" content="Latest release notes for CoreNuc Auction App — Lazy Lions Edition, including customer service, privacy, catalog, analytics, recovery, accessibility, Store packaging, and auction workflow improvements." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #45e3a6;
+      --accent-dark: #078bc7;
+      --border: #334155;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bg), #020617);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .site-header {
+      background: #020617;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #0b2231, #123b4b);
+      color: var(--accent);
+      box-shadow: 0 0 18px rgba(69, 227, 166, 0.22);
+      font-size: 0.95rem;
+      letter-spacing: -1px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible { color: var(--accent); }
+
+    header {
+      padding: 44px 20px;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 2.45rem);
+    }
+
+    header p {
+      max-width: 880px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    h2 { margin-top: 0; color: var(--accent); }
+    h3 { margin-top: 0; color: var(--text); }
+    p, li { color: var(--muted); }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 7px; }
+    a { color: var(--accent); }
+
+    .release-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .summary-card,
+    .change-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.25rem;
+      margin-top: 4px;
+    }
+
+    .change-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(69, 227, 166, 0.12);
+      border: 1px solid rgba(69, 227, 166, 0.42);
+      border-radius: 8px;
+      color: var(--text);
+      font-weight: bold;
+      padding: 6px 10px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.95rem;
+    }
+
+    footer a { color: var(--accent); }
+
+    @media (max-width: 620px) {
+      .site-header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html" aria-label="CoreNuc Auction App — Lazy Lions Edition home">
+        <span class="brand-mark" aria-hidden="true">LL</span>
+        <span>Lazy Lions</span>
+      </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="release.html">Release</a>
+        <a href="technology.html">Technology</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="helppage.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <header>
+    <h1>Latest Release</h1>
+    <p>Release notes for the current CoreNuc Auction App — Lazy Lions Edition build, including the newest capabilities for auction owners, managers, clerks, cashiers, registration teams, and customer-service staff.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>CoreNuc Auction App — Lazy Lions Edition 1.0.0</h2>
+      <p>Version 1.0.0 is the initial packaged Windows and Microsoft Store release. The current build expands the complete in-person auction workflow with customer-service, privacy, catalog productivity, analytics, recovery, accessibility, and Store-readiness improvements.</p>
+
+      <div class="release-summary">
+        <div class="summary-card"><span>Version</span><strong>1.0.0</strong></div>
+        <div class="summary-card"><span>Release Type</span><strong>Initial Release</strong></div>
+        <div class="summary-card"><span>Package Date</span><strong>July 28, 2026</strong></div>
+        <div class="summary-card"><span>Primary Platform</span><strong>Windows x64</strong></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Latest Application Improvements</h2>
+      <div class="change-grid">
+        <div class="change-card">
+          <span class="badge">First-Run Setup</span>
+          <h3>Guided business and auction configuration</h3>
+          <p>Configure document identity, tax and premium defaults, printer settings, the first auction, administrator, backup folder, initial verified backup, and optional removable practice auction.</p>
+        </div>
+        <div class="change-card">
+          <span class="badge">Catalog Productivity</span>
+          <h3>Bulk photo intake and richer lot records</h3>
+          <p>Drop or select multiple photos, import from a camera or device, create blank drafts, track category, condition, dimensions, and storage, duplicate lots, renumber ready lots, and search or archive records.</p>
+        </div>
+        <div class="change-card">
+          <span class="badge">Buyer Agreements</span>
+          <h3>Document eligibility before bidding</h3>
+          <p>Record terms, signature confirmation, ID and deposit status, card-on-file status, tax certificates, restrictions, and internal notes without storing full card or government-ID numbers.</p>
+        </div>
+        <div class="change-card">
+          <span class="badge">Command Mode</span>
+          <h3>A focused live-auction workspace</h3>
+          <p>Use configurable keyboard shortcuts with current and next lot details, lot photos, bidder confirmation, connection and backup badges, and fast correction of the latest recorded result.</p>
+        </div>
+        <div class="change-card">
+          <span class="badge">Pickup and Release</span>
+          <h3>Account for paid items after checkout</h3>
+          <p>Track storage and shipping plans, partial pickups, recipient identity checks, signature or tracking confirmation, release dates, and the responsible staff member.</p>
+        </div>
+        <div class="change-card">
+          <span class="badge">Communications</span>
+          <h3>Prepared messages with consent history</h3>
+          <p>Generate registration, invoice, receipt, reminder, pickup, and settlement messages; open reviewed email drafts; and record sent, failed, or cancelled outcomes.</p>
+        </div>
+        <div class="change-card">
+          <span class="badge">Privacy and Encryption</span>
+          <h3>Customer requests and protected backups</h3>
+          <p>Set retention rules, export customer data, record consent, anonymize eligible records with approval, and protect new backups with AES-256 authenticated encryption.</p>
+        </div>
+        <div class="change-card">
+          <span class="badge">Analytics and Accounting</span>
+          <h3>Operational insight and import-ready schedules</h3>
+          <p>Measure sell-through, category performance, bidder conversion, checkout time, payment distribution, and inventory aging, and export checksum-manifested accounting CSV schedules.</p>
+        </div>
+        <div class="change-card">
+          <span class="badge">Recovery and Accessibility</span>
+          <h3>Safer interruption handling and inclusive operation</h3>
+          <p>Review the last sale, pending changes, open financial work, and verified backup after an interrupted session, with improved keyboard, screen-reader, scaling, focus, and high-contrast support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What's Included</h2>
+      <div class="change-grid">
+        <div class="change-card">
+          <span class="badge">Auction Preparation</span>
+          <h3>Events, consignors, lots, and bidders</h3>
+          <p>Create auction events, register sellers, catalog lots with reserves and photos, register bidders, and print lot labels, inventory sheets, and bidder cards.</p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Live Auction</span>
+          <h3>Fast sale-result entry</h3>
+          <p>Record winning bidders and hammer prices, mark lots passed, withdrawn, or no-sale, navigate the ready catalog, and correct the latest result with permanent audit history.</p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Checkout</span>
+          <h3>Invoices, payments, refunds, and receipts</h3>
+          <p>Calculate premium and tax, accept cash, check, card, or split payments, apply documented adjustments, process controlled refunds, reconcile drawers, and print detailed receipts.</p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Settlements</span>
+          <h3>Consignor proceeds and payouts</h3>
+          <p>Calculate gross sales, commissions, deductions, and net proceeds; require manager approval; record payout methods and references; and print seller statements.</p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Local-Network Sync</span>
+          <h3>Coordinate several workstations</h3>
+          <p>Run an auction host and connect registration, auction, and checkout computers on a trusted local network while keeping a dedicated database on each workstation.</p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Staff Security</span>
+          <h3>Roles, PINs, locks, and audit history</h3>
+          <p>Create individual staff accounts, assign built-in or custom roles, protect sensitive corrections with manager approval, prevent simultaneous financial edits, and review searchable audit activity.</p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Reports and Closeout</span>
+          <h3>Review the complete auction</h3>
+          <p>Review sales, invoices, payments, tax, unsold inventory, settlements, and drawers; export CSV, Excel, and PDF reports; resolve closeout blockers; and create a verified final package.</p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Import and Backup</span>
+          <h3>Bring in data and protect records</h3>
+          <p>Validate CSV, ZIP, or Excel import packages before applying them, create automatic and manual verified backups, save external copies, and safely restore auction data.</p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Auction Hardware</span>
+          <h3>Scanning, receipt printing, and cash drawers</h3>
+          <p>Use keyboard-mode barcode or QR scanners, print Code 39 labels and bidder cards, configure receipt printers, and operate supported printer-connected cash drawers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reliability and Operational Safeguards</h2>
+      <ul>
+        <li>Automatic verified backups are created periodically and during normal application shutdown, with optional password-protected AES-256 authenticated encryption.</li>
+        <li>Invoices and settlements use temporary workstation locks to prevent conflicting financial changes.</li>
+        <li>Payments cannot exceed the current authoritative balance, and invoices cannot be finalized with an outstanding balance.</li>
+        <li>Refunds, adjustments, reopen actions, returns, transfers, and other corrections require reasons and preserve history.</li>
+        <li>Imports are previewed and validated before live records change, with rollback if a record fails.</li>
+        <li>Closeout identifies blockers such as unpaid invoices, open drawers, unpaid consignors, or pending synchronization.</li>
+        <li>Performance and memory-management improvements support longer auction sessions and larger record sets.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Packaging Notes</h2>
+      <p>The Microsoft Store package is named <strong>CoreNucAuctionApp-LazyLionsEdition-1.0.0.0-x64.msix</strong>. Store builds use the registered CoreNuc Auction App identity and receive updates through Microsoft Store.</p>
+      <p>A self-contained customer setup executable and MSI are also supported for direct and managed deployment. These packages include the Windows x64 application, required .NET desktop and ASP.NET runtimes, and native SQLite runtime.</p>
+      <p>The direct-release pipeline supports Authenticode signing, trusted timestamps, signature verification, and SHA-256 manifests. Upgrades preserve the database, catalog photos, backups, and settings stored under local application data.</p>
+    </section>
+
+    <section>
+      <h2>Known Notes</h2>
+      <ul>
+        <li>CoreNuc Auction App — Lazy Lions Edition is a Windows desktop application packaged for x64 computers.</li>
+        <li>Multi-computer synchronization is intended for a trusted private local network.</li>
+        <li>Each workstation must keep its own local database; do not share the SQLite database file over the network.</li>
+        <li>Catalog photos are copied into a local application-data folder but are not synchronized to other workstations or included in database-only backups.</li>
+        <li>Encrypted backup passwords must be retained securely and are required when restoring on a replacement computer.</li>
+        <li>For a multi-computer auction, final closeout should be performed on the host after all workstations are connected and fully synchronized.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CoreNucApps. All rights reserved.</p>
+    <p><a href="index.html">Home</a> | <a href="technology.html">Technology</a> | <a href="screenshots.html">Screenshots</a> | <a href="helppage.html">Help</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

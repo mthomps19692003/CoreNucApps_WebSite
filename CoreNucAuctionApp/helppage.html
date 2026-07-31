@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Help - CoreNuc Auction App — Lazy Lions Edition</title>
+  <meta name="description" content="Help guide for CoreNuc Auction App — Lazy Lions Edition, including setup, cataloging, bidder agreements, live sales, checkout, pickup, settlements, communications, privacy, reporting, networking, recovery, and accessibility." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #45e3a6;
+      --accent-dark: #078bc7;
+      --border: #334155;
+      --warning-bg: #3b2d17;
+      --warning-border: #8b6b2b;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bg), #020617);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .site-header {
+      background: #020617;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #0b2231, #123b4b);
+      color: var(--accent);
+      box-shadow: 0 0 18px rgba(69, 227, 166, 0.22);
+      font-size: 0.95rem;
+      letter-spacing: -1px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible { color: var(--accent); }
+
+    header {
+      padding: 44px 20px;
+      background: rgba(15, 23, 42, 0.9);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .help-icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: var(--accent);
+      color: #052e24;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    header h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 5vw, 2.4rem);
+    }
+
+    header p {
+      max-width: 900px;
+      margin: 6px 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    nav.toc-nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 0;
+    }
+
+    .toc {
+      background: rgba(17, 24, 39, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+
+    .toc h2 {
+      color: var(--accent);
+      margin: 0 0 16px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+
+    .toc-grid a {
+      display: block;
+      background: var(--card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .toc-grid a:hover,
+    .toc-grid a:focus-visible {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 20px 40px;
+    }
+
+    section {
+      background: rgba(17, 24, 39, 0.88);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 26px;
+      margin-bottom: 24px;
+      scroll-margin-top: 16px;
+    }
+
+    section h2 {
+      color: var(--accent);
+      margin-top: 0;
+      margin-bottom: 14px;
+    }
+
+    section h3 {
+      margin: 22px 0 7px;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+    }
+
+    p { margin: 0 0 12px; }
+    ol, ul { margin: 0 0 14px; padding-left: 24px; }
+    li { margin-bottom: 8px; }
+
+    .callout {
+      margin: 16px 0;
+      padding: 14px 16px;
+      border: 1px solid var(--warning-border);
+      border-radius: 8px;
+      background: var(--warning-bg);
+    }
+
+    .callout p {
+      margin: 0;
+      color: #fde7b0;
+    }
+
+    .status-grid,
+    .term-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .mini-card {
+      padding: 16px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+    }
+
+    .mini-card strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .mini-card p { margin: 0; }
+
+    .back-top {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .back-top:hover,
+    .back-top:focus-visible { color: var(--accent-dark); }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.95rem;
+    }
+
+    footer a { color: var(--accent); }
+
+    @media (max-width: 620px) {
+      .site-header-inner,
+      .header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      section { padding: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html" aria-label="CoreNuc Auction App — Lazy Lions Edition home">
+        <span class="brand-mark" aria-hidden="true">LL</span>
+        <span>Lazy Lions</span>
+      </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="release.html">Release</a>
+        <a href="technology.html">Technology</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="helppage.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <header id="top">
+    <div class="header-inner">
+      <span class="help-icon" aria-hidden="true">?</span>
+      <div>
+        <h1>Help</h1>
+        <p>Use this guide to prepare an event, run the live auction, check out bidders, settle with consignors, and close the auction safely.</p>
+        <p>CoreNuc Auction App — Lazy Lions Edition supports a simple one-computer setup or several workstations connected over a trusted local network.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav class="toc-nav" aria-label="Help contents">
+    <div class="toc">
+      <h2>Contents</h2>
+      <div class="toc-grid">
+        <a href="#QuickStartSection">Quick Start</a>
+        <a href="#WhatTheAppDoesSection">What the App Does</a>
+        <a href="#FirstSetupSection">First-Time Setup</a>
+        <a href="#PrepareSection">Prepare the Auction</a>
+        <a href="#CatalogToolsSection">Catalog Tools</a>
+        <a href="#BuyerAgreementsSection">Buyer Agreements</a>
+        <a href="#LiveAuctionSection">Run the Live Auction</a>
+        <a href="#CommandModeSection">Command Mode</a>
+        <a href="#CheckoutSection">Bidder Checkout</a>
+        <a href="#PickupSection">Pickup and Item Release</a>
+        <a href="#SettlementsSection">Consignor Settlements</a>
+        <a href="#ReportsSection">Reports and Closeout</a>
+        <a href="#AnalyticsSection">Analytics and Accounting</a>
+        <a href="#CommunicationsSection">Communications</a>
+        <a href="#PrivacyDataSection">Privacy and Customer Data</a>
+        <a href="#ImportSection">Import Existing Data</a>
+        <a href="#NetworkSection">Several Computers</a>
+        <a href="#BackupSection">Backup and Recovery</a>
+        <a href="#StaffSection">Staff and Security</a>
+        <a href="#HardwareSection">Scanning and Printing</a>
+        <a href="#AccessibilitySection">Accessibility</a>
+        <a href="#TroubleshootingSection">Troubleshooting</a>
+        <a href="#ChecklistSection">Auction-Day Checklist</a>
+        <a href="#ShortcutsSection">Shortcuts and Terms</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="QuickStartSection">
+      <h2>Quick Start</h2>
+      <ol>
+        <li>Create the auction with its date, location, buyer's premium, and sales-tax rate.</li>
+        <li>Register consignors, build the catalog, and print labels, intake sheets, or catalogs.</li>
+        <li>Register bidders, document buyer agreements and eligibility, and print bidder cards.</li>
+        <li>Use Live Auction to record each sold, passed, withdrawn, or no-sale lot.</li>
+        <li>Open bidder invoices, accept payments, finalize checkout, and print or save receipts.</li>
+        <li>Release paid purchases for pickup or shipping with staff and recipient confirmation.</li>
+        <li>Review consignor settlements, approve totals, and record seller payments.</li>
+        <li>Review reports, resolve blockers, reconcile cash drawers, and close the auction.</li>
+      </ol>
+      <p>For one computer, leave the app in <strong>Local Only</strong> mode. For multiple computers, choose one host and connect every other workstation before the auction begins.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="WhatTheAppDoesSection">
+      <h2>What the App Does</h2>
+      <p>CoreNuc Auction App — Lazy Lions Edition keeps the complete in-person auction workflow in one Windows application. It manages intake, cataloging, buyer agreements, live results, invoices, payments, pickup, communications, settlements, analytics, privacy requests, staff access, and audit history.</p>
+      <p>Records are stored locally on each computer. A one-computer auction requires no network setup. For a larger operation, a host synchronizes dedicated registration, auction, and checkout workstations across the local network without requiring internet access.</p>
+      <p>The Dashboard shows the active auction, lot and bidder counts, lots sold, gross hammer total, auction progress, and a preparation checklist.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="FirstSetupSection">
+      <h2>First-Time Setup</h2>
+      <p>The first-run assistant collects the business name and contact details used on documents, tax label and default rates, receipt-printer settings, the first auction, the first administrator, and the backup folder. It creates an initial verified backup before normal operation begins.</p>
+      <h3>Optional practice auction</h3>
+      <p>The assistant can create reserved training records so staff can rehearse cataloging, bidder registration, live entry, checkout, and settlement. Remove the practice auction from Settings when training is complete.</p>
+      <h3>Create the auction event</h3>
+      <p>Open Auctions. Enter the event name, date, location, buyer's premium percentage, and sales-tax rate for the event location. Select <strong>Create event</strong>. The newest event becomes the active event used for totals and checkout.</p>
+      <h3>Check the Dashboard</h3>
+      <p>Confirm that the correct event name, date, and location appear at the top. Create the correct event before entering auction-night transactions if anything is wrong.</p>
+      <h3>Choose one or several computers</h3>
+      <p>For one computer, no network setup is needed. For several computers, follow the networking section below and connect each workstation before work begins.</p>
+      <div class="callout"><p>Never place the <strong>auction.db</strong> database in a shared Windows folder. Each computer uses its own local database and communicates through Lazy Lions synchronization.</p></div>
+      <h3>Set up staff access</h3>
+      <p>The first time the app opens, create the administrator account. Give every worker a unique username and 4–8 digit PIN. In Settings, create the separate manager approval PIN used for protected financial corrections.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="PrepareSection">
+      <h2>Prepare for the Auction</h2>
+      <h3>Register consignors</h3>
+      <p>Open Consignors. Give each seller a unique number and enter the seller's name, phone, email, address, and commission percentage. A consignor must exist before a lot can be assigned to that seller number.</p>
+      <h3>Enter auction lots</h3>
+      <p>Open Lots. Enter a unique lot number, description, registered seller number, reserve, category, condition, dimensions, storage location, and optional photo. Use seller-name lookup when the number is not known.</p>
+      <div class="callout"><p>Selected photos are resized when needed and copied into the local CatalogPhotos folder. They are not synchronized to other workstations or included in database-only backups, so protect that folder separately.</p></div>
+      <h3>Print preparation materials</h3>
+      <p>On Lots, choose <strong>Print labels</strong> for lot labels or <strong>Print inventory</strong> for the full catalog. Review the selected printer, paper, and orientation before printing.</p>
+      <h3>Register bidders</h3>
+      <p>Open Bidders. Assign a unique bidder number and enter the buyer's name, phone, email, and address. Search, filter, edit, archive, restore, or delete supported records from the list.</p>
+      <h3>Print bidder cards</h3>
+      <p>Select a bidder and choose <strong>Print selected bidder card</strong>. Ask the bidder to hold the number up clearly when bidding.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="CatalogToolsSection">
+      <h2>Catalog Tools</h2>
+      <h3>Create several lots together</h3>
+      <p>Open Lots and select <strong>Catalog tools</strong>. Choose a consignor and starting lot number, then drop several photos into the window, select files, import from a camera or device, or add blank rows. One draft lot is created for each photo.</p>
+      <h3>Complete catalog details</h3>
+      <p>Edit descriptions, category, condition, dimensions, storage location, and photo assignments directly in the draft grid. Default values can be applied to the batch before all draft lots are created together.</p>
+      <h3>Duplicate or renumber lots</h3>
+      <p>Duplicate a selected lot when similar items share most catalog details. Use <strong>Renumber ready lots</strong> to assign a new starting number and increment without changing completed sale records.</p>
+      <h3>Search and archive records</h3>
+      <p>Auction, consignor, lot, and bidder lists now include search, status filters, edit controls, archive and restore, and guarded deletion. Archive records that must remain in history but should no longer appear in normal working lists.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="BuyerAgreementsSection">
+      <h2>Buyer Agreements and Eligibility</h2>
+      <p>Select a bidder and open <strong>Buyer agreement</strong>. Record the exact auction terms and version accepted, signature confirmation, signed name, deposit status, card-on-file status, and ID-verification status.</p>
+      <p>Record status only for identification and card assurance. Never enter an ID number, full card number, or card security code.</p>
+      <p>Tax-exempt bidders can have a PDF, PNG, or JPEG certificate attached inside the local database. Attachments are included in encrypted database backups and should be added on the host in a multi-computer auction.</p>
+      <p>Use bidding restrictions for deposit-required, manager-approval, or suspended bidders. Internal staff notes are not printed for the bidder. The registration list shows whether required agreement information is complete.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="LiveAuctionSection">
+      <h2>Run the Live Auction</h2>
+      <h3>Record a sold lot</h3>
+      <p>Open Live Auction and confirm the large lot number and description match the item on the block. Enter the winning bidder number and hammer price, then select <strong>Sold</strong> or press Enter. The result saves immediately and the next ready lot appears.</p>
+      <h3>Record other outcomes</h3>
+      <p>Choose <strong>Passed</strong> if bidding may return later, <strong>No sale</strong> when the item did not sell, or <strong>Withdraw</strong> when the auctioneer removes it. Completed lots are skipped while moving through the catalog.</p>
+      <h3>Navigate the catalog</h3>
+      <p>Use Previous and Next to move between ready lots. Recent Activity shows the latest completed lots, bidder numbers, and hammer prices.</p>
+      <h3>Correct the latest result</h3>
+      <p>Select <strong>Correct last</strong> only when the most recent result is wrong. The lot returns to Ready so it can be entered again. The correction remains visible in audit history.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="CommandModeSection">
+      <h2>Live Auction Command Mode</h2>
+      <p>Select <strong>Open command mode</strong> for a focused auction-clerk workspace. It shows the current lot and photograph, next lot, ready count, workstation connection, backup status, bidder confirmation, and last recorded result.</p>
+      <p>Default live shortcuts are Enter for Sold, F6 for Passed, F7 for No Sale, F8 for Withdraw, Page Up and Page Down for lot navigation, and Ctrl+Z for Correct Last. Administrators can assign supported F2–F12 or Ctrl/Alt shortcuts in Settings; every action must use a different shortcut.</p>
+      <p>Before bidding, verify the connection and backup badges, test the keyboard workflow, and confirm the next lot with the auctioneer. Command mode does not bypass bidder eligibility, sale validation, manager approval, or audit controls.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="CheckoutSection">
+      <h2>Check Out a Bidder</h2>
+      <h3>Open the cash drawer</h3>
+      <p>Before taking cash, enter the opening cash count and select Open in the Cash Drawer area. Check and card payments can be recorded without an open drawer, but cash payments cannot. Each workstation maintains its own drawer session.</p>
+      <h3>Open and verify the invoice</h3>
+      <p>Enter or scan the bidder number and open the invoice. Confirm the bidder and every purchased lot. Opening the invoice gives that workstation temporary control so another cashier cannot finalize the same bidder at the same time.</p>
+      <h3>Review charges and taxes</h3>
+      <p>Review the hammer total, buyer's premium, sales tax, adjustments, invoice total, and balance. Tax is omitted for bidders marked tax exempt. Charges and discounts require a reason and remain in audit history.</p>
+      <h3>Accept payment</h3>
+      <p>Choose Cash, Check, or Card; enter the amount and a useful reference, such as the check number or last four card digits; then select Add. For split payment, add each part separately. The app prevents payments above the host-authoritative balance.</p>
+      <h3>Finalize and print</h3>
+      <p>An invoice can be finalized only when its balance is zero. Finalization protects it from ordinary edits. Printed receipts include lots, adjustments, payments, refunds, references, invoice status, and balance.</p>
+      <h3>Refund or correct a finalized invoice</h3>
+      <p>For a refund, select the original payment, enter the amount and reason, and refund that payment. To change a finalized invoice, enter the manager PIN and a detailed reason, then reopen it. Original transactions are retained.</p>
+      <h3>Close and reconcile the drawer</h3>
+      <p>At the end of a cashier shift, count physical cash, enter the counted amount, and select <strong>Close &amp; reconcile</strong>. Compare Expected, Counted, and Over/Short before leaving the workstation.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="PickupSection">
+      <h2>Pickup and Item Release</h2>
+      <h3>Open a paid buyer</h3>
+      <p>Open <strong>Pickup &amp; release</strong> and search by bidder number, name, phone, or email. The queue prioritizes paid buyers with waiting or partially released items. A controlled workstation lock prevents conflicting releases.</p>
+      <h3>Plan storage or shipping</h3>
+      <p>Select purchased lots, mark items that require shipping, and save their storage locations. The screen shows payment-required, awaiting-pickup, partial-pickup, and fully released status.</p>
+      <h3>Release selected items</h3>
+      <p>Only items on a paid invoice may be released. Record the pickup person or shipping recipient, whether government-issued ID was checked, a typed signature, confirmation note, or tracking number, and the pickup or ship date. The app records the signed-in staff member and time automatically.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="SettlementsSection">
+      <h2>Settle with Consignors</h2>
+      <h3>Open the seller's settlement</h3>
+      <p>Open Settlements, select a consignor, and open the selected settlement. Review all sold, passed, withdrawn, and no-sale lots. Only one workstation can control a seller's settlement at a time.</p>
+      <h3>Review proceeds and fees</h3>
+      <p>Gross sales and commission are calculated automatically. Add lot fees, no-sale fees, advertising charges, or another deduction only when needed. Include a clear reason for every deduction.</p>
+      <h3>Approve and pay</h3>
+      <p>Enter the manager PIN and approve the settlement after checking its totals. Choose the payout method, enter the check or transaction number, and mark the consignor paid. Approved and paid settlements are protected from ordinary changes.</p>
+      <h3>Print or correct a statement</h3>
+      <p>The printed statement lists the seller, lots, commission, deductions, net proceeds, and payout reference. To correct an approved or paid settlement, enter the manager PIN and a detailed reason, then reopen it.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="ReportsSection">
+      <h2>Review Reports and Close the Auction</h2>
+      <h3>Run the closeout review</h3>
+      <p>Open Reports and select Refresh. Review Sales, Invoices, Payments, Tax, Unsold, Settlements, and Drawers. The summary shows hammer, premium, tax, collected payments, outstanding balances, and consignor proceeds.</p>
+      <h3>Understand review levels</h3>
+      <p>A <strong>Blocker</strong> must be resolved before closeout, such as an unpaid or unfinalized invoice, unpaid consignor, open drawer, or unsynchronized change. A <strong>Warning</strong> needs manager review. <strong>Information</strong> identifies items such as unsold inventory.</p>
+      <h3>Export reports</h3>
+      <p>Choose a destination folder to create separate CSV reports, a multi-sheet Excel workbook, and a printable PDF summary. Reports include an as-of timestamp. Accounting exports and operational analytics are available separately for specialized review.</p>
+      <h3>Perform final closeout</h3>
+      <p>For a multi-computer auction, close only from the host after every station is connected and finished. Enter the manager PIN, resolve all blockers, and close the auction. The final package contains reports, a verified database backup, and a checksum manifest.</p>
+      <h3>Reopen only when necessary</h3>
+      <p>A closed auction is read-only for catalog, sale, checkout, settlement, and import changes. To make an approved correction, enter the manager PIN and a detailed reason, then reopen the auction.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="AnalyticsSection">
+      <h2>Operational Analytics and Accounting Exports</h2>
+      <h3>Review operational performance</h3>
+      <p>From Reports, open <strong>Operational analytics</strong> to review sell-through rate, average hammer, average bidder spend, registration-to-purchase conversion, checkout duration, and unsold inventory.</p>
+      <p>Detailed tabs show category performance, below-reserve sales, revenue per consignor, bidder spending, checkout time, payment-method distribution, and unsold-inventory aging. Export creates separate CSV files for further analysis.</p>
+      <h3>Create accounting schedules</h3>
+      <p><strong>Accounting exports</strong> creates UTF-8 CSV schedules for sales, premiums, taxes by jurisdiction, refunds, payment methods, deposits, liabilities, commissions, settlement payments, and drawer over/short. A README explains the files and a SHA-256 manifest supports later verification.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="CommunicationsSection">
+      <h2>Communications Center</h2>
+      <p>Open Communications from the navigation or from a selected bidder or consignor. The app can prepare registration confirmations, winning-bid summaries, invoices, payment receipts, pickup reminders, unpaid-balance reminders, and consignor settlement statements.</p>
+      <p>Review the recipient, subject, and body before opening an email draft or copying the message. The app opens the default Windows email program; it does not send the message itself. Staff choose Send in that program.</p>
+      <p>Consent is checked for the relevant channel. After using the email application, mark the prepared history entry Sent, Failed, or Cancelled. Failed and cancelled outcomes require a reason, and the communication history records the staff member and workstation.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="PrivacyDataSection">
+      <h2>Privacy and Customer Data</h2>
+      <p>Open <strong>Privacy &amp; data</strong> to save the public privacy-policy URL, choose a 1–25 year retention period, find bidder or consignor records, export one customer's information as JSON, and review communication consent.</p>
+      <p>Consent history is append-only. Record each grant or withdrawal with its channel, purpose, source, staff member, time, and workstation.</p>
+      <p>Eligible archived customer records can be anonymized only after a manager provides a reason, confirms legal and retention obligations permit it, and enters the approval PIN. Transaction totals and audit integrity remain available.</p>
+      <p>This page also configures password-protected encrypted backups. Keep the backup password separately in a secure place; it is required to restore on a replacement computer.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="ImportSection">
+      <h2>Import Existing Records</h2>
+      <h3>Create or prepare a package</h3>
+      <p>Open Import Data and create a blank template. Use separate CSV files, a ZIP containing them, or one Excel workbook with sheets named Auctions, Consignors, Bidders, Lots, Sales, and Payments.</p>
+      <h3>Validate before changing data</h3>
+      <p>Choose the completed package, decide whether matching numbers should be skipped or updated, and whether balanced historical invoices should be closed. Select <strong>Validate &amp; preview</strong>. Preview does not alter live data.</p>
+      <h3>Correct errors and import</h3>
+      <p>Fix every reported error in the source files and validate again. Import becomes available only when no errors remain. Lazy Lions creates a verified backup first and rolls back the complete import if any record fails.</p>
+      <h3>Multi-computer auctions</h3>
+      <p>Run imports on the host. Imported records are then published to connected workstations. Each package receives a fingerprint to prevent accidental duplicate imports.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="NetworkSection">
+      <h2>Set Up Several Computers</h2>
+      <h3>On the host computer</h3>
+      <p>Open Settings. Leave the default port unless a network administrator instructs otherwise. Enter a shared sync key and select <strong>Start Auction Host</strong>. Keep the host powered on until every workstation is finished and up to date.</p>
+      <h3>On every other computer</h3>
+      <p>Open Settings. Enter the address shown by the host, such as <strong>http://AUCTION-PC:5127</strong>, and the exact same sync key. Select <strong>Connect workstation</strong>.</p>
+      <div class="status-grid">
+        <div class="mini-card"><strong>Connected</strong><p>Accepted changes can move between this station and the host.</p></div>
+        <div class="mini-card"><strong>Synchronizing</strong><p>The station is sending or receiving changes. Wait for Connected.</p></div>
+        <div class="mini-card"><strong>Offline</strong><p>Sales remain queued locally. Do not finish checkout until reconnected.</p></div>
+        <div class="mini-card"><strong>Sync Error</strong><p>Read the message, verify the address and key, then reconnect.</p></div>
+      </div>
+      <div class="callout"><p>Use networking only on a trusted private network. Do not share one SQLite database file between computers.</p></div>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="BackupSection">
+      <h2>Back Up or Restore Auction Data</h2>
+      <h3>Automatic protection</h3>
+      <p>The app creates a verified database backup every 30 minutes and when it closes. Settings shows the latest backup time and storage folder. The newest 30 automatic copies are retained.</p>
+      <h3>Enable encrypted backups</h3>
+      <p>In Privacy &amp; data, choose a backup password of at least 12 characters. New automatic and manual backups use AES-256 authenticated encryption and the <strong>.llabackup</strong> extension. The password is protected locally by Windows, but it must be kept separately for disaster recovery.</p>
+      <h3>Create or copy a backup</h3>
+      <p>Select <strong>Back up now</strong> for an immediate local copy. Select <strong>Save copy</strong> to place a verified backup on a USB drive or another computer. Wait for confirmation before removing the drive.</p>
+      <h3>Restore a backup</h3>
+      <p>In Settings, select Restore and choose an encrypted CoreNuc backup or a legacy ZIP backup. Configure the same password first when restoring on a replacement computer. The app verifies the checksum and database health, stops network services, and creates a safety copy before restoring.</p>
+      <h3>Recovery after an interrupted session</h3>
+      <p>If the previous session did not close safely, review Recovery Mode before continuing. Compare the last recorded sale with the auctioneer's written record, inspect pending offline changes and open financial work, then resume or restore a verified backup.</p>
+      <h3>Replace a failed host safely</h3>
+      <p>Stop bidding, make sure the original host is offline, restore the newest verified backup on the replacement, reconcile later sales, then reconnect one workstation at a time. Wait for Connected and zero waiting changes before adding another station.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="StaffSection">
+      <h2>Staff Sign-In and Security</h2>
+      <p>Each worker should use a unique username and 4–8 digit PIN. Give each person only the access required for the job. Five incorrect PIN attempts temporarily lock the account for five minutes.</p>
+      <div class="term-grid">
+        <div class="mini-card"><strong>Registration Clerk</strong><p>Registers bidders, records contact and tax-exempt details, and prints bidder cards.</p></div>
+        <div class="mini-card"><strong>Catalog Clerk</strong><p>Creates consignors and lots, adds descriptions and photos, and prints labels or inventory sheets.</p></div>
+        <div class="mini-card"><strong>Auction Clerk</strong><p>Records winners, hammer prices, passed lots, withdrawals, and no-sales.</p></div>
+        <div class="mini-card"><strong>Cashier</strong><p>Opens invoices, accepts payments, manages the cash drawer, and prints receipts.</p></div>
+        <div class="mini-card"><strong>Manager</strong><p>Supervises operations, approves corrections, reviews reports, and closes the auction.</p></div>
+        <div class="mini-card"><strong>Administrator</strong><p>Controls staff accounts, custom roles, networking, hardware, backups, updates, and settings.</p></div>
+      </div>
+      <h3>Custom roles</h3>
+      <p>Administrators can combine specific permissions for real jobs that do not match a built-in role. Keep permissions narrow and describe the role's purpose clearly.</p>
+      <h3>Locking and switching users</h3>
+      <p>Select the signed-in name at the lower left to lock the app and let the next worker sign in. The app also locks after inactivity.</p>
+      <h3>Audit Center</h3>
+      <p>Managers and administrators can search who signed in, entered sales, handled payments, approved corrections, or changed staff access. Export CSV when an auditor or accountant needs a copy.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="HardwareSection">
+      <h2>Scanning, Printing, Returns, and Support</h2>
+      <h3>Barcode and QR scanning</h3>
+      <p>Connect a USB scanner in keyboard mode. Select <strong>Scan barcode / QR</strong>, then scan a Lazy Lions lot label, bidder card, or QR code. Lot codes open the ready lot; bidder and invoice codes open Checkout.</p>
+      <h3>Design and print documents</h3>
+      <p>In Settings, enter the auction company's printed name, address, phone, and receipt footer. Lot labels and bidder cards include Code 39 barcodes. Receipts show lots, premium, tax, payments, and remaining balance.</p>
+      <h3>Receipt printer and cash drawer</h3>
+      <p>Install the printer in Windows first. Enter its exact Windows name in Settings, choose the paper-cut and drawer options, save, then use Test Receipt and Test Drawer. Without a configured receipt printer, Lazy Lions uses the normal Windows print dialog.</p>
+      <h3>Returns and buyer transfers</h3>
+      <p>Open the buyer invoice in Checkout and reopen any affected finalized invoice or settlement. Enter the lot, a specific reason, and the signed-in manager PIN. For a transfer, also enter the receiving bidder. The app recalculates both buyers and retains synchronized history.</p>
+      <h3>Updates and support packages</h3>
+      <p>Administrators can configure a secure CoreNucApps update feed. Downloads are checksum-verified before Windows Installer starts. A support package contains system and database-health details but excludes auction records, customer data, payments, PINs, and sync keys.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="AccessibilitySection">
+      <h2>Accessibility and Display Support</h2>
+      <p>The application supports keyboard-only workflows with visible focus, automatic accessible names for common controls, text-based status messages, screen-reader-friendly labels, scroll-safe windows, and Windows high-contrast themes.</p>
+      <p>Layouts are designed to remain usable at 1024×768 and at Windows display scaling up to 200%. Scrollbars may appear so actions remain reachable. Per-monitor DPI awareness keeps the application responsive when moved between displays with different scaling.</p>
+      <p>Press Windows+Ctrl+Enter to start Narrator. Use Tab and Shift+Tab to move between controls, arrow keys in lists and tables, Enter or Space to activate controls, and Escape to close supported dialogs.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="TroubleshootingSection">
+      <h2>Troubleshooting and Safe Shutdown</h2>
+      <h3>A workstation will not connect</h3>
+      <p>Confirm the host is running, both computers are on the same local network, the address and port are correct, and sync keys match exactly. If Windows Firewall asks, allow Lazy Lions on private networks.</p>
+      <h3>A bidder, lot, or seller number is rejected</h3>
+      <p>Numbers must be unique. Search the appropriate list for the existing record. The host keeps the first accepted record if two computers try to create different records with the same number.</p>
+      <h3>The wrong lot was sold</h3>
+      <p>If it was the latest transaction, use Correct Last and enter it again. For an older result, stop using the related invoice and ask a manager to review the audit history before checkout.</p>
+      <h3>An invoice or settlement is in use</h3>
+      <p>Another workstation controls that financial record. Finish or leave it on the other station, then try again. If a station lost power, wait about one minute for the lock to expire.</p>
+      <h3>An import will not continue</h3>
+      <p>Read the Detail column, correct the workbook or CSV, and validate again. Import stays disabled while errors remain. A package already imported must be corrected so its content and fingerprint change.</p>
+      <h3>Closing the application</h3>
+      <p>Select the close button once. Synchronization services may take a moment to stop. Do not turn off the host until every workstation shows Connected and zero changes waiting.</p>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="ChecklistSection">
+      <h2>Auction-Day Opening and Closing Checklist</h2>
+      <h3>Before doors open</h3>
+      <ul>
+        <li>Confirm the active auction, buyer's premium, and tax rate.</li>
+        <li>Start the host, connect each workstation, and confirm zero waiting changes.</li>
+        <li>Create a manual backup and test a bidder card, lot label, receipt, and statement.</li>
+        <li>Confirm that the manager approval PIN works.</li>
+      </ul>
+      <h3>Before bidding begins</h3>
+      <ul>
+        <li>Confirm consignors and lots are complete and all import errors are resolved.</li>
+        <li>Check lot order and reserves.</li>
+        <li>Verify the Live Auction keyboard workflow and Recent Activity list.</li>
+      </ul>
+      <h3>Before checkout opens</h3>
+      <ul>
+        <li>Open each cash drawer with a counted amount.</li>
+        <li>Confirm check and card reference procedures with staff.</li>
+        <li>Remind cashiers not to finalize while offline.</li>
+      </ul>
+      <h3>Before leaving</h3>
+      <ul>
+        <li>Finalize or identify every unpaid invoice and reconcile every drawer.</li>
+        <li>Review consignor payouts and exceptions.</li>
+        <li>Confirm all stations are connected with zero changes waiting.</li>
+        <li>Create a final verified backup, save a second copy, close workstations, then shut down the host.</li>
+      </ul>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+
+    <section id="ShortcutsSection">
+      <h2>Keyboard Shortcuts and Auction Terms</h2>
+      <div class="term-grid">
+        <div class="mini-card"><strong>F1</strong><p>Open Help.</p></div>
+        <div class="mini-card"><strong>Ctrl + L</strong><p>Open Lots.</p></div>
+        <div class="mini-card"><strong>Ctrl + B</strong><p>Open Bidders.</p></div>
+        <div class="mini-card"><strong>Ctrl + Shift + A</strong><p>Open Live Auction.</p></div>
+        <div class="mini-card"><strong>Hammer Price</strong><p>The winning bid before premium and tax.</p></div>
+        <div class="mini-card"><strong>Buyer's Premium</strong><p>The auction fee added to the hammer price.</p></div>
+        <div class="mini-card"><strong>Reserve</strong><p>The minimum acceptable price requested by the seller.</p></div>
+        <div class="mini-card"><strong>Consignor</strong><p>The person or business selling an item through the auction.</p></div>
+      </div>
+      <a class="back-top" href="#top">Back to top &uarr;</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CoreNucApps. All rights reserved.</p>
+    <p><a href="index.html">Home</a> | <a href="release.html">Release</a> | <a href="technology.html">Technology</a> | <a href="screenshots.html">Screenshots</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="Technology, architecture, imports, document reliability, privacy, and accessibility in CoreNucApps Blueprint Studio.">
+  <title>Technology | CoreNucApps Blueprint Studio</title><link rel="icon" href="corenucapps_logo_small.png"><link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><div class="nav-shell"><a class="brand" href="index.html"><img src="corenucapps_logo_small.png" alt=""><span>Blueprint Studio<small>CoreNucApps</small></span></a><nav class="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="release.html">Release</a><a href="technology.html" aria-current="page">Technology</a><a href="screenshots.html">Screenshots</a><a href="helppage.html">Help</a><a href="privacy.html">Privacy</a></nav></div></header>
+  <div class="page-hero"><p class="eyebrow">Under the canvas</p><h1>One engine. Seven disciplines.</h1><p class="lede">Blueprint Studio is a native Windows application built around a shared, versioned drawing model and a consistent professional editing pipeline.</p></div>
+  <main id="main">
+    <section><div class="section-heading"><p class="kicker">Foundation</p><h2>Native Windows engineering</h2><p>Built with C# on .NET 10 and Windows Presentation Foundation, Blueprint Studio combines a responsive desktop interface with local file access, printing, accessible controls, and high-quality vector and raster rendering.</p></div><div class="grid">
+      <article class="card"><h3>Shared document model</h3><p>Every workspace uses the same versioned components, connectors, pages, layers, selection, undo, saving, and publishing behavior.</p></article>
+      <article class="card"><h3>Purpose-built renderer</h3><p>Vector-based component styles, routed connections, resize and rotation handles, automatic bounds, and page-aware output remain crisp at every scale.</p></article>
+      <article class="card"><h3>Portable projects</h3><p>Editable JSON documents are straightforward to store, back up, move between computers, and preserve independently of the application.</p></article>
+    </div></section>
+    <section><div class="section-heading"><p class="kicker">Import intelligence</p><h2>Connect to the source—on your terms</h2></div><div class="grid two">
+      <article class="card"><h3>AWS infrastructure</h3><p>The official AWS SDK reads VPCs, subnets, EC2 instances, RDS databases, and load balancers using your configured identity. Refresh reconciles stable resource IDs while preserving manual edits.</p></article>
+      <article class="card"><h3>C# analysis</h3><p>Roslyn builds a cross-project compilation locally to map APIs, services, repositories, models, dependencies, method calls, Entity Framework relationships, and detected HTTP flows.</p></article>
+      <article class="card"><h3>Database metadata</h3><p>Provider-specific connectors discover SQL Server/Azure SQL, PostgreSQL, MySQL/MariaDB, Oracle, and SQLite objects through read-only metadata access.</p></article>
+      <article class="card"><h3>Spreadsheet inventories</h3><p>CSV, XLSX, and XLSM files can be previewed, mapped, validated, de-duplicated, classified, and transformed into connected infrastructure diagrams.</p></article>
+    </div></section>
+    <section class="band"><p class="kicker">Security and privacy</p><h2>No account. No telemetry. No automatic upload.</h2><p>Code and spreadsheet analysis happen locally. Database credentials remain in memory only for the requested connection and are not written to project files or diagnostics. AWS access keys remain with the configured AWS identity provider.</p><div class="actions"><a class="button" href="privacy.html">Full privacy policy</a></div></section>
+    <section><div class="section-heading"><p class="kicker">Reliability</p><h2>Designed for work worth keeping</h2></div><div class="grid">
+      <article class="card"><h3>Safe saving</h3><p>Atomic document writes avoid leaving a partially written drawing if a save is interrupted.</p></article>
+      <article class="card"><h3>Recovery</h3><p>Unsaved work creates a local recovery snapshot every 30 seconds and can be restored after an unexpected shutdown.</p></article>
+      <article class="card"><h3>Compatibility</h3><p>Format versioning upgrades older documents and protects newer, unsupported files from accidental changes.</p></article>
+    </div></section>
+    <section><div class="section-heading"><p class="kicker">Accessible by design</p><h2>Built for keyboard, screen reader, and display scaling</h2><p>Primary commands are keyboard reachable, focus is highly visible, status updates are announced to assistive technology, and the canvas and page controls expose meaningful accessible names. Light, Medium, and CoreNuc Dark themes support different workspace preferences.</p></div></section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><p>&copy; 2026 CoreNucApps. Technology made clear.</p><div class="footer-links"><a href="helppage.html">Support</a><a href="privacy.html">Privacy</a></div></div></footer>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Screenshots - CoreNuc Auction App — Lazy Lions Edition</title>
+  <meta name="description" content="Screenshots of CoreNuc Auction App — Lazy Lions Edition showing the dashboard, catalog, registration, live auction, checkout, settlements, closeout, staff access, networking, and backups." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #45e3a6;
+      --accent-dark: #078bc7;
+      --border: #334155;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bg), #020617);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .site-header {
+      background: #020617;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 2px solid var(--accent);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #0b2231, #123b4b);
+      color: var(--accent);
+      box-shadow: 0 0 18px rgba(69, 227, 166, 0.22);
+      font-size: 0.95rem;
+      letter-spacing: -1px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible { color: var(--accent); }
+
+    header {
+      padding: 44px 20px;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 5vw, 2.45rem);
+    }
+
+    header p {
+      max-width: 880px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    .screenshot {
+      margin-bottom: 34px;
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .screenshot h2 {
+      margin: 0 0 12px;
+      color: var(--accent);
+    }
+
+    .screenshot p,
+    .screenshot li { color: var(--muted); }
+
+    .screenshot-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: 22px;
+      align-items: start;
+    }
+
+    figure { margin: 0; }
+
+    figure a {
+      display: block;
+      border-radius: 8px;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #020617;
+      transition: border-color 160ms ease, transform 160ms ease;
+    }
+
+    figure a:hover img,
+    figure a:focus-visible img {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .details h3 {
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+
+    .details ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.95rem;
+    }
+
+    footer a { color: var(--accent); }
+
+    @media (max-width: 820px) {
+      .screenshot-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .site-header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .screenshot { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html" aria-label="CoreNuc Auction App — Lazy Lions Edition home">
+        <span class="brand-mark" aria-hidden="true">LL</span>
+        <span>Lazy Lions</span>
+      </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="release.html">Release</a>
+        <a href="technology.html">Technology</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="helppage.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <header>
+    <h1>Screenshots</h1>
+    <p>Explore the main screens in CoreNuc Auction App — Lazy Lions Edition, from preparing the catalog and registering bidders to recording sales, accepting payments, settling with sellers, and closing the auction.</p>
+  </header>
+
+  <main>
+    <section class="screenshot">
+      <h2>Built for the Complete Auction Workflow</h2>
+      <p>The screenshots below show the primary Windows application screens. Select any image to open the full-size version.</p>
+      <p>The current build also adds guided first-run setup, bulk catalog tools, buyer agreements, live Command Mode, pickup and item release, customer communications, privacy and consent controls, operational analytics, accounting exports, encrypted backups, interrupted-session recovery, and expanded accessibility support.</p>
+    </section>
+
+    <section class="screenshot">
+      <h2>Auction Dashboard</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/01-dashboard.png" target="_blank" rel="noopener"><img src="screenshots/01-dashboard.png" alt="Lazy Lions auction dashboard showing lot, bidder, sold-lot, gross-hammer, progress, and checklist information." /></a>
+          <figcaption>The dashboard summarizes the active auction and keeps the preparation checklist visible before bidding begins.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>Active auction name, date, and location.</li>
+            <li>Counts for lots, registered bidders, and lots sold.</li>
+            <li>Gross hammer total and overall auction progress.</li>
+            <li>A quick checklist for details, reserves, bidder cards, printer, and cash drawer.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2>Lot Catalog</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/02-lot-catalog.png" target="_blank" rel="noopener"><img src="screenshots/02-lot-catalog.png" alt="Lot catalog showing descriptions, seller numbers, reserves, sale status, hammer prices, and printing controls." /></a>
+          <figcaption>The catalog organizes every item before and during the auction; the current build also adds bulk photo intake, richer item details, duplication, renumbering, search, and archive tools.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>Lot numbers, descriptions, seller assignments, reserves, and optional photos.</li>
+            <li>Ready, sold, passed, and no-sale statuses.</li>
+            <li>Recorded hammer prices for completed lots.</li>
+            <li>Actions for adding lots and printing labels or full inventory.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2>Bidder Registration</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/03-bidder-registration.png" target="_blank" rel="noopener"><img src="screenshots/03-bidder-registration.png" alt="Bidder registration screen showing bidder numbers, contact information, addresses, tax-exempt status, and bidder card printing." /></a>
+          <figcaption>The registration screen assigns bidder numbers; the current build also connects buyer terms, signature confirmation, ID and deposit status, tax documents, restrictions, consent, and communications.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>Unique bidder numbers and buyer names.</li>
+            <li>Phone, email, and postal address fields.</li>
+            <li>Tax-exempt status for documented buyers.</li>
+            <li>One-click printing for the selected bidder card.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2>Live Auction</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/04-live-auction.png" target="_blank" rel="noopener"><img src="screenshots/04-live-auction.png" alt="Live auction screen showing the current lot, seller, reserve, winning bidder, hammer price, result buttons, buyer total, and recent activity." /></a>
+          <figcaption>The live entry screen emphasizes the current lot; Command Mode adds a larger photo-aware, keyboard-first workspace with configurable shortcuts and readiness badges.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>Large current lot number, description, seller, and reserve.</li>
+            <li>Winning bidder and hammer-price entry.</li>
+            <li>Sold, passed, no-sale, withdraw, navigation, and correction controls.</li>
+            <li>Buyer premium and tax preview plus recent completed-lot activity.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2>Bidder Checkout</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/05-bidder-checkout.png" target="_blank" rel="noopener"><img src="screenshots/05-bidder-checkout.png" alt="Bidder checkout screen showing purchased lots, premium, tax, invoice total, payments, adjustments, refunds, corrections, and cash drawer controls." /></a>
+          <figcaption>Checkout brings purchased lots, calculated totals, payments, corrections, PDF receipt options, and drawer controls into one protected workflow.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>Purchased lots with hammer totals, premium, tax, adjustments, and invoice total.</li>
+            <li>Cash, check, card, and split-payment entry with references.</li>
+            <li>Controlled charges, discounts, refunds, and manager corrections.</li>
+            <li>Invoice status, remaining balance, receipt printing, finalization, and drawer operation.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2>Consignor Settlements</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/06-consignor-settlements.png" target="_blank" rel="noopener"><img src="screenshots/06-consignor-settlements.png" alt="Consignor settlement screen showing seller lots, gross sales, commission, deductions, net proceeds, approval, payout, and statement controls." /></a>
+          <figcaption>The settlement workspace calculates seller proceeds and preserves the approval and payout history.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>Seller list with settlement status and net proceeds.</li>
+            <li>Sold and unsold lots associated with the selected consignor.</li>
+            <li>Gross sales, commission, deductions, and calculated net payout.</li>
+            <li>Statement printing, manager approval, payout reference, and controlled reopening.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2>Reports and Auction Closeout</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/07-reports-closeout.png" target="_blank" rel="noopener"><img src="screenshots/07-reports-closeout.png" alt="Reports and auction closeout screen showing hammer, premium, tax, payments, outstanding balance, consignor net, report tabs, and closeout blockers." /></a>
+          <figcaption>The closeout screen accounts for the auction before closure and now links to operational analytics and accounting-ready exports.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>Top-level hammer, premium, tax, payment, outstanding, and consignor totals.</li>
+            <li>Separate views for sales, invoices, payments, tax, unsold lots, settlements, and drawers.</li>
+            <li>Closeout blockers and warnings with required actions.</li>
+            <li>Report export, manager-approved closure, and controlled reopening.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2>Staff and Access</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/08-staff-access.png" target="_blank" rel="noopener"><img src="screenshots/08-staff-access.png" alt="Staff and access screen showing staff accounts, usernames, roles, status, PIN controls, new account creation, and custom roles." /></a>
+          <figcaption>Individual accounts and job-based permissions keep screens focused while protecting higher-risk auction actions.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>Named staff accounts with usernames, roles, status, and last sign-in.</li>
+            <li>PIN reset, activation, deactivation, and user-switching controls.</li>
+            <li>Built-in roles for registration, catalog, auction, cashier, manager, and administrator duties.</li>
+            <li>Custom-role creation for organizations with specialized jobs.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2>Network and Backup Settings</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/09-network-backups.png" target="_blank" rel="noopener"><img src="screenshots/09-network-backups.png" alt="Network and workstation settings showing auction host controls, workstation connection, sync key, workstation identity, manager PIN, synchronization status, and backup recovery." /></a>
+          <figcaption>The settings screen supports local or synchronized operation, encrypted backups, privacy controls, and guided recovery without making auction night depend on internet access.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>Auction host configuration with port and protected shared sync key.</li>
+            <li>Workstation connection address and synchronization status.</li>
+            <li>Permanent workstation identity used by the audit trail.</li>
+            <li>Manager approval PIN plus automatic backup and recovery controls.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="screenshot">
+      <h2>Why Lazy Lions Stands Apart</h2>
+      <div class="screenshot-layout">
+        <figure>
+          <a href="screenshots/10-about.png" target="_blank" rel="noopener"><img src="screenshots/10-about.png" alt="About screen explaining the Lazy Lions Edition's auction-night speed, financial safeguards, accountability, local-network operation, recovery, imports, and system requirements." /></a>
+          <figcaption>The About screen summarizes the design principles behind the application and its minimum system requirements.</figcaption>
+        </figure>
+        <div class="details">
+          <h3>What This Shows</h3>
+          <ul>
+            <li>A purpose-built workflow from seller intake through final payout.</li>
+            <li>Auction-night speed with focused screens and large controls.</li>
+            <li>Financial integrity, individual accountability, and host-authoritative operation.</li>
+            <li>Local reliability, verified recovery, migration tools, and system requirements.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CoreNucApps. All rights reserved.</p>
+    <p><a href="index.html">Home</a> | <a href="release.html">Release</a> | <a href="technology.html">Technology</a> | <a href="helppage.html">Help</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>

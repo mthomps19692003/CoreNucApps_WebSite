@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Release Notes - CoreNuc Poker League Manager</title>
+  <meta name="description" content="Latest release notes for CoreNuc Poker League Manager, including version details, release date, changes, improvements, and known notes." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --card: #1f2937;
+      --text: #f8fafc;
+      --muted: #cbd5e1;
+      --accent: #22c55e;
+      --accent-dark: #16a34a;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, var(--bg), #020617);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .site-header {
+      background: #020617;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1.35rem;
+      font-weight: bold;
+    }
+
+    .brand img {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .site-nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.95rem;
+    }
+
+    .site-nav a:hover {
+      color: var(--accent);
+    }
+
+    header {
+      padding: 44px 20px;
+      text-align: center;
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid var(--border);
+    }
+
+    header h1 {
+      margin: 0 0 12px;
+      font-size: 2.45rem;
+    }
+
+    header p {
+      max-width: 880px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: var(--text);
+    }
+
+    p, li {
+      color: var(--muted);
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    .release-summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .summary-card,
+    .change-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .summary-card strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.25rem;
+      margin-top: 4px;
+    }
+
+    .change-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(34, 197, 94, 0.14);
+      border: 1px solid rgba(34, 197, 94, 0.45);
+      border-radius: 8px;
+      color: var(--text);
+      font-weight: bold;
+      padding: 6px 10px;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px 20px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: #020617;
+      font-size: 0.95rem;
+    }
+
+    footer a {
+      color: var(--accent);
+    }
+
+    @media (max-width: 620px) {
+      .site-header-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="index.html">
+        <img src="corenucapps_logo_small.png" alt="CoreNucApps logo" />
+        <span>CoreNucApps</span>
+      </a>
+      <nav class="site-nav" aria-label="Site navigation">
+        <a href="index.html">Home</a>
+        <a href="release.html">Release</a>
+        <a href="technology.html">Technology</a>
+        <a href="screenshots.html">Screenshots</a>
+        <a href="helppage.html">Help</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </div>
+
+  <header>
+    <h1>Latest Release</h1>
+    <p>
+      Release notes for the newest CoreNuc Poker League Manager build, including the changes most useful to tournament hosts and league organizers.
+    </p>
+  </header>
+
+  <main>
+    <section>
+      <h2>CoreNuc Poker League Manager 2.1.1.0</h2>
+      <p>
+        Version 2.1.1.0 improves live tournament control, secure and reliable Phone Control, settlement accuracy, the player-facing timer, and browser display consistency.
+      </p>
+
+      <div class="release-summary">
+        <div class="summary-card">
+          <span>Version</span>
+          <strong>2.1.1.0</strong>
+        </div>
+        <div class="summary-card">
+          <span>Build</span>
+          <strong>2110</strong>
+        </div>
+        <div class="summary-card">
+          <span>Package Date</span>
+          <strong>July 27, 2026</strong>
+        </div>
+        <div class="summary-card">
+          <span>Primary Platform</span>
+          <strong>Windows</strong>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What Changed</h2>
+      <div class="change-grid">
+        <div class="change-card">
+          <span class="badge">Secure Phone Control</span>
+          <h3>Reliable pairing and protected commands</h3>
+          <p>
+            Phones pair with a six-digit code that is hidden until needed. Pairing survives browser reloads, active sessions renew automatically, and every command is protected by pairing and client validation, failed-attempt limits, request limits, and browser security controls.
+          </p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">High Hand</span>
+          <h3>Complete High Hand control from a phone</h3>
+          <p>
+            Phone Control can track High Hand payment and enter, edit, replace, or remove the current High Hand without reloading the page or changing player seating.
+          </p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Player-Facing Timer</span>
+          <h3>A redesigned view for across-the-room reading</h3>
+          <p>
+            The timer now centers a large countdown with the current round and blinds, plus upcoming blinds. Its content scales for a separate screen or full-screen display.
+          </p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Settlement And Standings</span>
+          <h3>More accurate final totals</h3>
+          <p>
+            The winner's final paid-in total now includes rebuys and add-ons. Completed Player Standings entries can be corrected after the game for finish position, paid-in amount, winnings, and points.
+          </p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Tournament Display</span>
+          <h3>Faster access to live controls</h3>
+          <p>
+            Full Screen wording now reflects the current state, pairing codes have explicit Show and Hide controls, Player Actions stays available beside Admin Controls, and bust-outs work while the clock is paused.
+          </p>
+        </div>
+
+        <div class="change-card">
+          <span class="badge">Browser Display</span>
+          <h3>Game Details now matches the desktop</h3>
+          <p>
+            TV Browser Game Details now follows the desktop Players / Seating, Prizes, Rounds, and two-column Notes layout, with responsive sizing that fits the browser window.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Recent Foundation Improvements</h2>
+      <ul>
+        <li>Game Setup, Players, Rounds, Prizes, Chips, Tables, Saved Games, and tournament screens now use clearer actions, status messages, keyboard focus, and more consistent layouts.</li>
+        <li>Player pages include status, career statistics, and tournament history; High Hand payment and current-hand tracking are available on desktop and Phone Control.</li>
+        <li>Settings includes Check Health and Safety Backup. Imports create a safety backup first, the five newest safety backups are retained, and structured local error logs are retained for 14 days.</li>
+        <li>Database integrity checks, duplicate repair, safer transactional updates, and expanded automated testing improve release reliability.</li>
+        <li>An app-wide Windows right-click menu provides quick access to navigation, timer controls, rounds, undo, tables, player actions, displays, and full screen.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Included App Areas</h2>
+      <ul>
+        <li>Texas Holdem game setup for players, rounds, chips, buy-ins, add-ons, rebuys, prizes, and tables.</li>
+        <li>Live tournament display with round timer, blind levels, antes, recent actions, and tournament controls.</li>
+        <li>Player action tools for rebuys, add-ons, bust outs, receipts, restores, and undo support.</li>
+        <li>TV Browser Display for showing selected tournament screens on another browser on the same home network.</li>
+        <li>Secure paired Phone Control for trusted local-network tournament control from a phone.</li>
+        <li>Tables and seating tools for assigning seats and balancing active players.</li>
+        <li>Player stats, league standings, settlement reports, and game details review.</li>
+        <li>Player career history, High Hand tracking, and corrections to completed-game totals.</li>
+        <li>Tournament templates for recurring leagues and starter game presets.</li>
+        <li>Settings for prize formulas, display options, receipts, sounds, database health checks, safety backups, and protected imports.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Packaging Notes</h2>
+      <p>
+        The latest Windows package is prepared as a Microsoft Store style package for CoreNuc Poker League Manager. Store licensing and purchase handling are managed through the Microsoft Store listing.
+      </p>
+      <p>
+        The packaged artifact for this release uses version <strong>2.1.1.0</strong> for the Windows x64 MSIX package.
+      </p>
+    </section>
+
+    <section>
+      <h2>Known Notes</h2>
+      <ul>
+        <li>The desktop app remains the primary tournament display and source of truth.</li>
+        <li>The TV Browser Display and Phone Control should be used only on trusted local networks.</li>
+        <li>Phone Control is hosted by the Windows desktop app, opened from a phone browser on the same network, and protected by a six-digit pairing code.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CoreNucApps. All rights reserved.</p>
+    <p><a href="index.html">Home</a> | <a href="technology.html">Technology</a> | <a href="screenshots.html">Screenshots</a> | <a href="helppage.html">Help</a> | <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
+</body>
+</html>
