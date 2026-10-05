@@ -202,10 +202,12 @@
         <span>CoreNucApps</span>
       </a>
       <nav class="site-nav" aria-label="Site navigation">
+        <a href="../index.html">All Apps</a>
         <a href="index.html">Home</a>
         <a href="release.html">Release</a>
         <a href="technology.html">Technology</a>
         <a href="screenshots.html">Screenshots</a>
+        <a href="guides.html">Guides</a>
         <a href="helppage.html">Help</a>
         <a href="privacy.html">Privacy</a>
       </nav>
@@ -221,23 +223,23 @@
 
   <main>
     <section>
-      <h2>CoreNuc Poker League Manager 2.1.1.0</h2>
+      <h2>CoreNuc Poker League Manager 2.3.0.0</h2>
       <p>
-        Version 2.1.1.0 improves live tournament control, secure and reliable Phone Control, settlement accuracy, the player-facing timer, and browser display consistency.
+        Version 2.3 delivers a more complete tournament-night experience from player arrival through the final recap, with new formats, guided setup, player-facing information, stronger recovery, and polished sharing.
       </p>
 
       <div class="release-summary">
         <div class="summary-card">
           <span>Version</span>
-          <strong>2.1.1.0</strong>
+          <strong>2.3.0.0</strong>
         </div>
         <div class="summary-card">
           <span>Build</span>
-          <strong>2110</strong>
+          <strong>2300</strong>
         </div>
         <div class="summary-card">
           <span>Package Date</span>
-          <strong>July 27, 2026</strong>
+          <strong>October 5, 2026</strong>
         </div>
         <div class="summary-card">
           <span>Primary Platform</span>
@@ -250,51 +252,39 @@
       <h2>What Changed</h2>
       <div class="change-grid">
         <div class="change-card">
-          <span class="badge">Secure Phone Control</span>
-          <h3>Reliable pairing and protected commands</h3>
-          <p>
-            Phones pair with a six-digit code that is hidden until needed. Pairing survives browser reloads, active sessions renew automatically, and every command is protected by pairing and client validation, failed-attempt limits, request limits, and browser security controls.
-          </p>
+          <span class="badge">Tournament Formats</span>
+          <h3>Six ways to run the event</h3>
+          <p>Run Standard, Fixed Bounty, Progressive Knockout, Mystery Bounty, Satellite, and Charity tournaments with format-aware tracking.</p>
         </div>
 
         <div class="change-card">
-          <span class="badge">High Hand</span>
-          <h3>Complete High Hand control from a phone</h3>
-          <p>
-            Phone Control can track High Hand payment and enter, edit, replace, or remove the current High Hand without reloading the page or changing player seating.
-          </p>
+          <span class="badge">Player Arrival</span>
+          <h3>RSVP and check-in</h3>
+          <p>Track invited, going, waitlisted, declined, and checked-in players before play begins, then confirm seating as the field arrives.</p>
         </div>
 
         <div class="change-card">
-          <span class="badge">Player-Facing Timer</span>
-          <h3>A redesigned view for across-the-room reading</h3>
-          <p>
-            The timer now centers a large countdown with the current round and blinds, plus upcoming blinds. Its content scales for a separate screen or full-screen display.
-          </p>
+          <span class="badge">Player Companion</span>
+          <h3>A QR page for every player</h3>
+          <p>Print a QR code so players can follow their seat, blinds, average stack, High Hand, bounty board, payouts, and live standings.</p>
         </div>
 
         <div class="change-card">
-          <span class="badge">Settlement And Standings</span>
-          <h3>More accurate final totals</h3>
-          <p>
-            The winner's final paid-in total now includes rebuys and add-ons. Completed Player Standings entries can be corrected after the game for finish position, paid-in amount, winnings, and points.
-          </p>
+          <span class="badge">Smart Builder</span>
+          <h3>Build for the night you want</h3>
+          <p>Generate blinds around the target duration, field size, starting stack, pace, breaks, and color-up points.</p>
         </div>
 
         <div class="change-card">
-          <span class="badge">Tournament Display</span>
-          <h3>Faster access to live controls</h3>
-          <p>
-            Full Screen wording now reflects the current state, pairing codes have explicit Show and Hide controls, Player Actions stays available beside Admin Controls, and bust-outs work while the clock is paused.
-          </p>
+          <span class="badge">Preflight and Recovery</span>
+          <h3>Prepare and protect live play</h3>
+          <p>Verify blinds, seating, payouts, chips, Phone Control, TV display, sound, and backups, then recover complete live state after a restart.</p>
         </div>
 
         <div class="change-card">
-          <span class="badge">Browser Display</span>
-          <h3>Game Details now matches the desktop</h3>
-          <p>
-            TV Browser Game Details now follows the desktop Players / Seating, Prizes, Rounds, and two-column Notes layout, with responsive sizing that fits the browser window.
-          </p>
+          <span class="badge">Presentation and Recap</span>
+          <h3>Brand the room and share the finish</h3>
+          <p>Apply display themes and league branding, then export an image or PDF recap with results, prizes, High Hand, knockouts, entries, prize pool, and standings.</p>
         </div>
       </div>
     </section>
@@ -332,7 +322,7 @@
         The latest Windows package is prepared as a Microsoft Store style package for CoreNuc Poker League Manager. Store licensing and purchase handling are managed through the Microsoft Store listing.
       </p>
       <p>
-        The packaged artifact for this release uses version <strong>2.1.1.0</strong> for the Windows x64 MSIX package.
+        The packaged artifact for this release uses version <strong>2.3.0.0</strong> for the Windows x64 MSIX package.
       </p>
     </section>
 
@@ -342,13 +332,14 @@
         <li>The desktop app remains the primary tournament display and source of truth.</li>
         <li>The TV Browser Display and Phone Control should be used only on trusted local networks.</li>
         <li>Phone Control is hosted by the Windows desktop app, opened from a phone browser on the same network, and protected by a six-digit pairing code.</li>
+        <li>The local-network Club Hub experience is included through Player Companion. Public internet hosting requires a separately operated compatible relay, hosting account, deployment, security policy, and service terms.</li>
       </ul>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2026 CoreNucApps. All rights reserved.</p>
-    <p><a href="index.html">Home</a> | <a href="technology.html">Technology</a> | <a href="screenshots.html">Screenshots</a> | <a href="helppage.html">Help</a> | <a href="privacy.html">Privacy Policy</a></p>
+    <p><a href="index.html">Home</a> | <a href="technology.html">Technology</a> | <a href="screenshots.html">Screenshots</a> | <a href="guides.html">Guides</a> | <a href="helppage.html">Help</a> | <a href="privacy.html">Privacy Policy</a></p>
   </footer>
 </body>
 </html>

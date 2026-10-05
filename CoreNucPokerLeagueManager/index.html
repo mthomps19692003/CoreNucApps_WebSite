@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CoreNuc Poker League Manager</title>
-  <meta name="description" content="CoreNuc Poker League Manager helps home poker leagues manage Texas Holdem tournaments, players, blinds, buy-ins, rebuys, add-ons, payouts, seating, and timing." />
+  <meta name="description" content="CoreNuc Poker League Manager 2.3 is a complete Windows tournament director with six tournament formats, RSVP and check-in, Player Companion QR pages, live displays, recovery, standings, and post-game recaps." />
   <style>
     :root {
       --bg: #0f172a;
@@ -150,6 +150,21 @@
       color: var(--text);
     }
 
+    .product-shot {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(260px, .75fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .product-shot img {
+      display: block;
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      box-shadow: 0 20px 55px rgba(0, 0, 0, .28);
+    }
+
     ul {
       padding-left: 20px;
     }
@@ -172,6 +187,10 @@
         align-items: flex-start;
         flex-direction: column;
       }
+
+      .product-shot {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -188,6 +207,7 @@
         <a href="release.html">Release</a>
         <a href="technology.html">Technology</a>
         <a href="screenshots.html">Screenshots</a>
+        <a href="guides.html">Guides</a>
         <a href="helppage.html">Help</a>
         <a href="privacy.html">Privacy</a>
       </nav>
@@ -197,62 +217,72 @@
   <header>
     <h1>CoreNuc Poker League Manager</h1>
     <p>
-      Designed for home poker leagues running Texas Holdem tournaments, CoreNuc Poker League Manager helps organizers manage live poker events with confidence, structure, and ease.
+      Run a polished tournament night from player arrival through the final recap—with dependable live controls, professional displays, league history, and a QR companion page for every player.
     </p>
-    <a class="button" href="#support">Get Support</a>
+    <a class="button" href="#version-23">Explore Version 2.3</a>
   </header>
 
   <main>
     <section>
       <h2>About the App</h2>
       <p>
-        CoreNuc Poker League Manager is built for home poker hosts, league organizers, and tournament directors who need a simple way to manage Texas Holdem tournaments. The app helps keep games organized by tracking players, tables, blind rounds, buy-ins, rebuys, add-ons, payouts, phone-based tournament actions, and tournament progress from one central application.
+        CoreNuc Poker League Manager is built for home poker hosts, league organizers, charity events, and tournament directors. It keeps players, tables, blinds, entries, rebuys, add-ons, payouts, displays, results, and season standings together in one Windows application.
       </p>
       <p>
-        Whether you are running a casual poker night, a recurring league event, or a structured multi-table tournament, this application provides the tools needed to build reusable tournament templates, run the clock, confirm live actions, and keep the tournament moving smoothly.
+        Whether you are running a casual poker night, a recurring league event, or a structured multi-table tournament, the app supports the complete flow: build the structure, welcome players, verify the room, run live play, settle results, and share the finish.
       </p>
     </section>
 
-    <section>
-      <h2>Key Features</h2>
+    <section class="product-shot">
+      <img src="screenshots/14-version-2-3-tournament-display.png" alt="CoreNuc Poker League Manager version 2.3 tournament display showing the live clock, current blinds, High Hand, bounty leaders, and recent actions" />
+      <div>
+        <h2>Tournament night at a glance</h2>
+        <p>The player-facing display keeps the clock, current and upcoming blinds, event status, and director controls easy to read while play is moving.</p>
+        <p><a href="screenshots.html">Explore all app screenshots</a></p>
+      </div>
+    </section>
+
+    <section id="version-23">
+      <h2>What's New in Version 2.3</h2>
       <div class="features">
         <div class="card">
-          <h3>Tournament Setup</h3>
-          <p>Create and configure Texas Holdem tournaments with blind levels, starting chips, round times, breaks, payout structures, and reusable templates.</p>
+          <h3>Six Tournament Formats</h3>
+          <p>Run Standard, Fixed Bounty, Progressive Knockout, Mystery Bounty, Satellite, and Charity events with format-aware tracking.</p>
         </div>
         <div class="card">
-          <h3>Player Management</h3>
-          <p>Track registered players, seating assignments, table movement, eliminations, and tournament standings.</p>
+          <h3>RSVP and Check-In</h3>
+          <p>Track invited, going, waitlisted, declined, and checked-in players before the first hand is dealt.</p>
         </div>
         <div class="card">
-          <h3>Buy-ins and Add-ons</h3>
-          <p>Manage buy-ins, rebuys, add-ons, prize pools, and player payments during live tournament play.</p>
+          <h3>Player Companion</h3>
+          <p>Print a QR code players can scan for their seat, blinds, average stack, High Hand, bounty board, payouts, and standings.</p>
         </div>
         <div class="card">
-          <h3>Live Tournament Clock</h3>
-          <p>Display current blinds, upcoming blinds, timers, breaks, and tournament status for players and organizers.</p>
+          <h3>Smart Tournament Builder</h3>
+          <p>Build a blind structure around the desired duration, field size, starting stack, pace, breaks, and color-up points.</p>
         </div>
         <div class="card">
-          <h3>Phone Browser Remote</h3>
-          <p>Pair a phone with a six-digit code, then securely control the clock, rounds, player actions, and High Hand tracking from the same private network.</p>
+          <h3>Tournament-Night Preflight</h3>
+          <p>Verify blinds, seating, payouts, chips, Phone Control, TV display, sound, and backups before starting play.</p>
         </div>
         <div class="card">
-          <h3>Auto Rounds And Prize Preview</h3>
-          <p>Generate round structures, preview calculated payouts, and apply prize changes with more confidence.</p>
+          <h3>Professional Presentation</h3>
+          <p>Apply finished display themes and league branding, with English, Spanish, or French player-display headings and selectable currency.</p>
         </div>
         <div class="card">
-          <h3>Safer Live Actions</h3>
-          <p>Confirmation prompts and guardrails help prevent accidental bust outs, add-ons, rebuys, restores, and in-progress exits.</p>
+          <h3>Post-Game Recaps</h3>
+          <p>Create shareable image and PDF recaps with results, prizes, High Hand, knockouts, entries, prize pool, and season standings.</p>
         </div>
         <div class="card">
-          <h3>League Tracking</h3>
-          <p>Review player history, career results, league standings, High Hand status, and correct completed-game totals when needed.</p>
+          <h3>Recovery and Backups</h3>
+          <p>Recover the complete live tournament state after a restart, backed by automatic safety backups.</p>
         </div>
         <div class="card">
-          <h3>Data Safety</h3>
-          <p>Check database health, create rotating safety backups, protect imports automatically, and rely on structured local error logs.</p>
+          <h3>Phone and TV Control</h3>
+          <p>Use secured Phone Control and a same-network TV Browser Display while the desktop application remains the source of truth.</p>
         </div>
       </div>
+      <p><a href="guides.html">Follow the guided tournament-night workflows</a> or <a href="helppage.html">open the complete Help Center</a>.</p>
     </section>
 
     <section>
@@ -309,7 +339,7 @@
     <section>
       <h2>Latest Release</h2>
       <p>
-        Review version 2.1.1.0 and what changed:
+        Review version 2.3.0.0 and what changed:
         <a href="release.html">Release Notes</a>
       </p>
     </section>
